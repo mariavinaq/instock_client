@@ -1,0 +1,42 @@
+@use '../../styles/partials/global' as*;
+@use '../../styles/partials/mixins' as*;
+@use '../../styles/partials/typography' as*;
+@use '../../styles/partials/variables' as*;
+
+.Header {
+    background-color: #232940;
+    height: 40rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__logo {
+        height: 6rem;
+        margin-bottom: 3rem;
+    }
+    &__nav {
+        display: flex;
+        width: 100%;
+        &-links {
+            width: 100%;
+        }
+    }
+    &__button {
+        padding: 1rem;
+        width: 100%;
+        border-radius: 3rem;
+        font-size: 2rem;
+        background-color: #232940;
+        border: none;
+        color: #FFFFFF;
+        height: 6rem;
+        &:hover {
+            border: solid #0095FF;
+            border-width: 0.1rem;
+            text-decoration: underline #0095FF;
+        }
+        &--active {
+            background-color: #13182C;
+        }
+    }
+}
