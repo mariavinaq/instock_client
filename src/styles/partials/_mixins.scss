@@ -1,0 +1,84 @@
+//@use './breakpoint-variables' as *;
+@use './variables.scss' as *;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin page-header {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+
+    @include tablet {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+}
+
+@mixin subheader {
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+    @include tablet {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+}
+
+@mixin labels-links-buttons {
+    font-size: 1.3rem;
+    line-height: 2rem;
+
+    @include tablet {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+}
+
+@mixin table-header {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+
+    @include tablet {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}
+
+@mixin body-large {
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+
+    @include tablet {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+    }
+}
+
+@mixin body-medium {
+    font-size: 1.3rem;
+    line-height: 2rem;
+
+    @include tablet {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+    }
+}
+
+@mixin body-small {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+
+    @include tablet {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}

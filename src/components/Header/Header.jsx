@@ -7,8 +7,8 @@ export default function Header() {
     <div className='Header'>
         <img className='Header__logo' src={logo} alt='logo at header'></img>
         <div className='Header__nav'>
-            <button className='Header__warehouses Header__wareghouses--active Header__button'>Warehouses</button>
-            <button className='Header__inventory Header__inventory--active Header__button'>Inventory</button>
+            <button className='Header__warehouses Header__button Header__button--active'>Warehouses</button>
+            <button className='Header__inventory Header__button Header__button--active'>Inventory</button>
         </div>
     </div>
   )
