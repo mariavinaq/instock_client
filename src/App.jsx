@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Route, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Warehouse from './pages/Warehouse/Warehouse'
 import Inventory from './pages/Inventory/Inventory'
 import Footer from './components/Footer/Footer'
@@ -10,9 +10,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Warehouse/>}></Route>
-          <Route path='/warehouse' element={<Warehouse/>}></Route>
-          <Route path='/inventory' element={<Inventory/>}></Route>
+          <Route path='/*' element={<Warehouse/>}></Route>
+          <Route path='/warehousePage/*' element={<Warehouse/>}></Route>
+          <Route path='/inventoryPage/*' element={<Inventory/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
