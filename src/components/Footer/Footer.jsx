@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <section className="footer__license">
-        <span className="fiiter__text">© InStock Inc. All Rights Reserved</span>
+        <span className="fiiter__text">© InStock Inc. All Rights Reserved.</span>
       </section>
     </footer>
   );
