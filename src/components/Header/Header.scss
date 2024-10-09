@@ -4,8 +4,6 @@
 @use '../../styles/partials/variables.scss' as *;
 
 .header {
-    background-color: #232940;
-    height: 40rem;
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -20,7 +18,7 @@
         padding-left: 10rem;
     }
     &__logo {
-        height: 6rem;
+        height: 3rem;
         margin-bottom: 3rem;
         @include tablet {
             height: 3rem;
