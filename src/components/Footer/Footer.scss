@@ -1,0 +1,25 @@
+@use '../../styles/partials/global.scss';
+@use '../../styles/partials/mixins.scss';
+@use '../../styles/partials/typography.scss';
+@use '../../styles/partials/variables.scss';
+
+.footer{
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display:flex;
+
+
+&__license {
+  color: variables.$color-slate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; 
+
+    @include mixins.body-small;
+  }
+}
+  
+  
