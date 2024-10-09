@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Warehouse from './pages/Warehouse/Warehouse'
 import Inventory from './pages/Inventory/Inventory'
