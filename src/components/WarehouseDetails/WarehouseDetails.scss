@@ -1,0 +1,34 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouse-details {
+    margin: 0 1.6rem;
+    padding: $pad-increment*4 $pad-increment*3 $pad-increment*3;
+    border-bottom: 0.1rem solid $color-cloud;
+    background-color: $color-white;
+
+    &__header {
+        display: flex;
+    }
+
+    &__back {
+        margin-right: 1rem;
+    }
+
+    &__edit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.6rem;
+        height: 3.6rem;
+        margin-left: auto;
+        border: none;
+        border-radius: 50%;
+        background-color: $color-is-indigo;
+    }
+
+    &__edit-button-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
