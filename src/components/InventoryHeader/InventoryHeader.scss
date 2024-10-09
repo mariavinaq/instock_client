@@ -1,0 +1,88 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: $color-cloud 1px solid;
+  padding: 36px 24px 24px;
+
+  @include tablet {
+    border-bottom: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding:32px 32px 24px;
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 24px;
+    
+    color: $color-is-black;
+    @include page-header;
+    @include tablet {
+      padding:0;
+    }
+  }
+
+  &__controls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      width: 50%;
+      flex-direction: row;
+      padding: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  &__input {
+    height: 36px;
+    
+    font-size:13px;
+    border-radius: 20px;
+    padding: 0 1rem;
+    border: solid 1px $color-cloud;
+    background-image: url("../../assets/icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem) center;
+    margin-bottom:1rem;
+    max-width: 100%;
+    @include body-medium;
+    @include tablet {
+      height: 38px;
+      margin-right:1rem;
+      margin-bottom:0;
+      width: 100%;
+    }
+  }
+
+  &__add-btn {
+    height: 36px;
+    width: 100%;
+    padding: 8px 103px;
+    border-radius: 20px;
+    background-color: $color-is-indigo;
+    border: none;
+    gap:10px;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-graphite;
+    }
+
+    @include tablet {
+      height: 38px;
+      padding: 8px 16px;
+      white-space: nowrap;
+    }
+  }
+}
+  

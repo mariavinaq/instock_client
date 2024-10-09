@@ -1,6 +1,6 @@
 import './InventoryList.scss';
 import SortIcon from '../../assets/Icons/sort-24px.svg'
-
+import InventoryItem from '../InventoryItem/InventoryItem';
 function InventoryList ({inventories}) {
     return (
         <>
