@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import './Header.scss';
 import logo from '../../assets/Logo/InStock-Logo_2x.png'
@@ -20,16 +19,3 @@ export default function Header() {
   )
 }
 
-//dive outside of button is reserved for <Link> tags later
-=======
-import './Header.scss';
-
-function Header () {
-    return (
-        <>
-        </>
-    )
-}
-
-export default Header;
->>>>>>> develop
