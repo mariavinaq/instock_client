@@ -15,7 +15,7 @@ export default function Header() {
             <NavLink to='/warehouses' className='header__nav-item'>Warehouses</NavLink>
           </div>
           <div className='header__nav-wrap'>
-            <NavLink to='/inventory' className='header__nav-item'>Inventory</NavLink>
+            <NavLink to='/inventories' className='header__nav-item'>Inventory</NavLink>
           </div>
         </div>
     </div>

@@ -16,8 +16,8 @@ function App() {
 
   return (
     <>
-      <Header/>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path='/' element={<Redirect/>}></Route>
           <Route path='/warehouses/' element={<Warehouse/>}></Route>
