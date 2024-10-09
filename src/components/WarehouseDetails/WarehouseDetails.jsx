@@ -10,6 +10,7 @@ function WarehouseDetails () {
                 <h1>Washington</h1>
                 <button className='warehouse-details__edit-button'>
                     <img className='warehouse-details__edit-button-icon' src={iconEdit} />
+                    
                 </button>
             </div>
             <div className='warehouse-details__about'>
