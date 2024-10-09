@@ -4,59 +4,64 @@
 @use '../../styles/partials/variables.scss' as *;
 
 .header {
-    padding: 3rem;
+    background-color: #232940;
+    padding: 2.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include labels-links-buttons;
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
+        padding: 3.2rem;
     }
     @include desktop {
-        padding-right: 10rem;
-        padding-left: 10rem;
+        padding: 3.2rem 13rem 3.2rem 13rem;
     }
     &__logo {
-        height: 3rem;
-        margin-bottom: 3rem;
+        height: 2.8rem;
+        width: 12.86rem;
+        margin-bottom: 2.4rem;
         @include tablet {
-            height: 3rem;
-            margin: 0.5rem;
+            margin: 0.4rem;
         }
     }
     &__nav {
         display: flex;
+        color: #BDC5D5;
         width: 100%;
-        &-links {
-            width: 100%;
-        }
         @include tablet {
-            width: 25rem;
+            justify-content: flex-end;
+        }
+        &-wrap {
+            width: 100%;
+            display: flex;
+            @include tablet {
+                width: 10.7rem;
+            }
+        }
+        &-item {
+            text-align: center;
+            width: 100%;
+            border-radius: 3rem;
+            padding: 0.7rem;
+            font-size: 1.3rem;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
-    &__button {
-        padding: 1rem;
-        width: 100%;
-        border-radius: 3rem;
-        font-size: 2rem;
-        background-color: #232940;
-        border: none;
-        color: #FFFFFF;
-        height: 6rem;
-        &:hover {
-            border: solid #0095FF;
-            border-width: 0.1rem;
-            text-decoration: underline #0095FF;
-        }
-        &--active {
-            background-color: #13182C;
-        }
-        @include tablet {
-            height: 3.5rem;
-            font-size: 0.5rem;
-            padding: 0;
-            width: 100%;
-        }
+
+}
+
+.active {
+    background-color: #13182C;
+    color: #ffffff;
+    height: 3.6rem;
+    width: 100%;
+    border-radius: 4rem;
+    @include tablet {
+        height: 3.8rem;
     }
 }
