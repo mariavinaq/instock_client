@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import "./App.scss";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import React from "react";
-
-import HomePage from "./pages/HomePage/HomePage.jsx";
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Warehouse from './pages/Warehouse/Warehouse'
+import Inventory from './pages/Inventory/Inventory'
+import Footer from './components/Footer/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path='/*' element={<Warehouse/>}></Route>
+          <Route path='/warehousePage/*' element={<Warehouse/>}></Route>
+          <Route path='/inventoryPage/*' element={<Inventory/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )
