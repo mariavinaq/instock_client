@@ -1,0 +1,64 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.header {
+    background-color: #232940;
+    height: 40rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    @include desktop {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+    &__logo {
+        height: 6rem;
+        margin-bottom: 3rem;
+        @include tablet {
+            height: 3rem;
+            margin: 0.5rem;
+        }
+    }
+    &__nav {
+        display: flex;
+        width: 100%;
+        &-links {
+            width: 100%;
+        }
+        @include tablet {
+            width: 25rem;
+        }
+    }
+    &__button {
+        padding: 1rem;
+        width: 100%;
+        border-radius: 3rem;
+        font-size: 2rem;
+        background-color: #232940;
+        border: none;
+        color: #FFFFFF;
+        height: 6rem;
+        &:hover {
+            border: solid #0095FF;
+            border-width: 0.1rem;
+            text-decoration: underline #0095FF;
+        }
+        &--active {
+            background-color: #13182C;
+        }
+        @include tablet {
+            height: 3.5rem;
+            font-size: 0.5rem;
+            padding: 0;
+            width: 100%;
+        }
+    }
+}
