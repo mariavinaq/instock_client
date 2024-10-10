@@ -9,12 +9,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 20rem;
     @include labels-links-buttons;
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         padding: 3.2rem;
+        height: 18.6rem;;
     }
     @include desktop {
         padding: 3.2rem 13rem 3.2rem 13rem;

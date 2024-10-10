@@ -1,14 +1,49 @@
-import './Inventory.scss';
-import { Route, Routes } from 'react-router-dom';
-import InventoryList from '../../components/InventoryList/InventoryList';
+import React, { useState, useEffect } from "react";
+import "./Inventory.scss";
+import InventoryList from "../../components/InventoryList/InventoryList";
+import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
+import axios from "axios";
+import InventoryModal from "../../components/InventoryModal/InventoryModal";
 
+function Inventory() {
+  const [inventory, setInventory] = useState([]);
+  const [inventoryModalOpen, setInventoryModalOpen] = useState(false);
+  const [selectedInventory, setSelectedInventory] = useState("");
+  const handleOpenInventoryModal = (event) => {
+    const id = Number(event.target.id);
+    setSelectedInventory(id);
+    setInventoryModalOpen(true);
+  };
 
-function Inventory () {
-    return (
-        <>
-        
-        </>
-    )
+  const handleCloseInventoryModal = () => {
+      setInventoryModalOpen(false);
+  };
+  const fetchInventories = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/inventories`);
+      setInventory(response.data);
+    } catch (error) {
+      console.error("Error fetching inventory:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchInventories();
+  }, []);
+  return (
+    <>
+    <InventoryModal 
+          isOpen={inventoryModalOpen}
+          onClose={handleCloseInventoryModal}
+          inventoryId={selectedInventory}
+          fetchData={fetchInventories}
+    />
+    <div className="inventory-page">
+      <InventoryHeader />
+      <InventoryList inventories={inventory} handleOpenInventoryModal={handleOpenInventoryModal} />
+    </div>
+    </>
+  );
 }
 
 export default Inventory;
