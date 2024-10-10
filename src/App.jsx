@@ -5,7 +5,7 @@ import Inventory from "./pages/Inventory/Inventory";
 import Footer from "./components/Footer/Footer";
 import Redirect from "./components/Redirect/Redirect";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
-import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
+import EditInventoryItem from "./pages/EditInventoryItem/EditInventoryItem";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import Header from "./components/Header/Header";
 import EditWarehouseItem from "./components/EditWarehouseItem/EditWarehouseItem";
@@ -37,7 +37,7 @@ function App() {
               element={<AddNewInventory />}
             ></Route>
             <Route
-              path="/inventories/edit/:id"
+              path="/inventories/:id/edit"
               element={<EditInventoryItem />}
             ></Route>
             <Route
