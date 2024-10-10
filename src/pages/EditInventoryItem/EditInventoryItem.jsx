@@ -15,7 +15,6 @@ function EditInventoryItem () {
     useEffect(() => {
         const getItem = async () => {
             try {
-                console.log("Item"+id);
                 const itemResponse = await axios.get(`http://localhost:8080/inventories/${id}`);
                 const itemData = itemResponse.data
                 setData(itemData)        
@@ -33,7 +32,6 @@ function EditInventoryItem () {
             try {
                 const warehouseResponse = await axios.get(`http://localhost:8080/warehouses`);
                 const warehouseList = warehouseResponse.data
-                console.log(warehouseResponse.data);
                 const itemWarehouse = warehouseList.find((warehouse) => warehouse.warehouse_name === data.warehouse_name)
 
                 setWarehouseId(itemWarehouse.id);

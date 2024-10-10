@@ -6,7 +6,7 @@ import deleteicon from '../../assets/icons/delete_outline-24px.svg';
 import ChevronRightIcon from '../../assets/icons/chevron_right-24px.svg';
 
 
-function InventoryItem({inventory}) {
+function InventoryItem({inventory, handleOpenInventoryModal}) {
     const statusClass = inventory.status.toLowerCase() === 'in stock' ? 'in-stock' : 'out-of-stock';
     const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ function InventoryItem({inventory}) {
             <div className="inventory-item__actions">
 							<div className='inventory-item__actions-container'>
                 <button className="inventory-item__delete">
-                    <img src={deleteicon} id={inventory.id} />
+                    <img src={deleteicon} id={inventory.id} onClick={handleOpenInventoryModal}/>
                 </button>
                 </div>
                 <div className='inventory-item__actions-container'>
