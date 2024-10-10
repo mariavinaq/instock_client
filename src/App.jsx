@@ -18,6 +18,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header/>
+        <AddNewWarehouse />
         <Routes>
           <Route path='/' element={<Redirect/>}></Route>
           <Route path='/warehouses/' element={<Warehouse/>}></Route>
