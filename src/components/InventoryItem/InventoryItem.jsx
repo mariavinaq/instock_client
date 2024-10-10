@@ -43,15 +43,15 @@ function InventoryItem({inventory}) {
             </div>
             <div className="inventory-item__actions">
 							<div className='inventory-item__actions-container'>
-                <button aria-label="Delete item" className="inventory-item__delete">
+                <button className="inventory-item__delete">
                     <img src={deleteicon} id={inventory.id} />
                 </button>
-							</div>
-							<div className='inventory-item__actions-container'>
-                <button aria-label="Delete item" className="inventory-item__delete">
-                    <img src={editIcon} onClick={(()=> navigate(`/inventoryPage/inventory/edit/${inventory.id}`))} />
+                </div>
+                <div className='inventory-item__actions-container'>
+                <button className="inventory-item__delete">
+                    <img src={editIcon} onClick={(()=> navigate(`/inventories/${inventory.id}/edit`))} />
                 </button>
-							</div>
+                </div>
             </div>
         </div>
     );
