@@ -14,11 +14,10 @@ import ContentWrapper from './components/ContentWrapper/ContentWrapper'
 import InventoryDetailsPage from './pages/InventoryDetailsPage/InventoryDetailsPage'
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
-        <Header/>
+        <Header />
         <ContentWrapper>
           <Routes>
             <Route path='/' element={<Redirect/>}></Route>
@@ -32,10 +31,10 @@ function App() {
             <Route path='/inventories/:id' element={<InventoryDetailsPage/>}></Route>
           </Routes>
         </ContentWrapper>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,137 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.warehouse-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: $color-cloud 1px solid;
+    color: $color-is-black;
+    padding:24px;
+
+    @include tablet {
+      padding: 8px 32px;
+      flex-direction: row;
+    }
+
+    &__main-container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+  
+    &__details-container,
+    &__info-container {
+      display: flex;
+      flex-direction: column;
+      flex:4.5;
+
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &__label-mobile {
+        margin:0;
+        margin-bottom: 4px;
+        color: $color-slate;
+        font-weight: 600;
+        @include body-small;
+        
+            
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__name-container {
+      @include tablet {
+        flex: 4.5;
+      }
+    }
+
+    &__detail-container{
+      @include tablet {
+        flex: 4.5;
+      }
+    }
+
+    &__name-sub-container {
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      margin-top:0;
+      @include body-medium;
+      
+    }
+
+    &__name{
+      margin-top: 0;
+      margin-bottom:16px;
+      color: $color-is-indigo;
+      font-weight: 600;
+
+      @include tablet {
+        margin-bottom:0px;
+      }
+    }
+
+    &__detail {
+      margin-bottom: 16px;
+      margin-top:0;
+      @include body-medium;
+      @include tablet {
+        margin-right:1rem;
+        margin-bottom: 0;
+        flex: 1;
+
+        @include desktop {
+          width: auto; 
+        }
+      }
+    }
+
+   
+    &__warehouse {
+      margin-bottom: 16px;
+      margin-top:0;
+      @include body-medium;
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+    &__warehouse-container {
+      @include tablet {
+      flex: 4;
+      }
+    }
+
+    &__chevron{
+      height: 20px;
+    }
+  
+    &__actions {
+      display: flex;
+      justify-content: space-between;
+  
+      button {
+        background: none;
+        border: none;
+        padding: 4px;
+        cursor: pointer;
+  
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+			&-container {
+				flex: 1;
+			}
+    }
+  }
+  
