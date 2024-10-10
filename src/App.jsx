@@ -1,24 +1,55 @@
-import './App.scss'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Warehouse from './pages/Warehouse/Warehouse'
-import Inventory from './pages/Inventory/Inventory'
-import Footer from './components/Footer/Footer'
-import Redirect from './components/Redirect/Redirect'
+import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Warehouse from "./pages/Warehouse/Warehouse";
+import Inventory from "./pages/Inventory/Inventory";
+import Footer from "./components/Footer/Footer";
+import Redirect from "./components/Redirect/Redirect";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import EditInventoryItem from "./pages/EditInventoryItem/EditInventoryItem";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
+import Header from "./components/Header/Header";
+import EditWarehouseItem from "./components/EditWarehouseItem/EditWarehouseItem";
+import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
+import WarehouseItemDetails from "./components/WarehouseItemDetails/WarehouseItemDetails";
+import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path='/*' element={<Redirect/>}></Route>
-          <Route path='/warehousePage/*' element={<Warehouse/>}></Route>
-          <Route path='/inventoryPage/*' element={<Inventory/>}></Route>
-        </Routes>
-        <Footer/>
+        <Header />
+        <ContentWrapper>
+          <Routes>
+            <Route path="/" element={<Redirect />}></Route>
+            <Route path="/warehouses" element={<Warehouse />}></Route>
+            <Route path="/warehouses/add" element={<AddNewWarehouse />}></Route>
+            <Route
+              path="/warehouses/edit/:id"
+              element={<EditWarehouseItem />}
+            ></Route>
+            <Route
+              path="/warehouses/:id"
+              element={<WarehouseItemDetails />}
+            ></Route>
+            <Route path="/inventories" element={<Inventory />}></Route>
+            <Route
+              path="/inventories/add"
+              element={<AddNewInventory />}
+            ></Route>
+            <Route
+              path="/inventories/:id/edit"
+              element={<EditInventoryItem />}
+            ></Route>
+            <Route
+              path="/inventories/:id"
+              element={<InventoryItemDetails />}
+            ></Route>
+          </Routes>
+        </ContentWrapper>
+        <Footer />
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

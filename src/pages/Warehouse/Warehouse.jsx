@@ -1,23 +1,33 @@
-import './Warehouse.scss';
-import { Routes, Route } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import WarehouseList from '../../components/WarehouseList/WarehouseList';
-import EditWarehouseItem from '../../components/EditWarehouseItem/EditWarehouseItem';
-import AddNewWarehouse from '../../components/AddNewWarehouse/AddNewWarehouse';
-import WarehouseItemDetails from '../../components/WarehouseItemDetails/WarehouseItemDetails';
+import "./Warehouse.scss";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import WarehouseList from "../../components/WarehouseList/WarehouseList";
+import WarehouseHeader from "../../components/WarehouseHeader/WarehouseHeader";
 
-function Warehouse () {
-    return (
-        <>
-        <Header/>
-        <Routes>
-            <Route path='/warehouse' element={<WarehouseList/>}></Route>
-            <Route path='/warehouse/edit/:id' element={<EditWarehouseItem/>}></Route>
-            <Route path='/warehouse/add' element={<AddNewWarehouse/>}></Route>
-            <Route path='/warehouse/:id' element={<WarehouseItemDetails/>}></Route>
-        </Routes>
-        </>
-    )
+function Warehouse() {
+  const [warehouseData, setWarehouseData] = useState([]);
+
+  const fetchWarehouses = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/warehouses`);
+      console.log("Warehouses data: " + response.data);
+      setWarehouseData(response.data);
+    } catch (error) {
+      console.error("Error fetching inventory:", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log("Calling load component");
+    fetchWarehouses();
+  }, []);
+
+  return (
+    <>
+      <WarehouseHeader />
+      <WarehouseList warehouses={warehouseData} />
+    </>
+  );
 }
 
 export default Warehouse;

@@ -1,23 +1,32 @@
-import './Inventory.scss';
-import { Route, Routes } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import InventoryList from '../../components/InventoryList/InventoryList';
-import InventoryItemDetails from '../../components/InventoryItemDetails/InventoryItemDetails';
-import EditInventoryItem from '../../components/EditInventoryItem/EditInventoryItem';
-import AddNewInventory from '../../components/AddNewInventory/AddNewInventory';
+import React, { useState, useEffect } from "react";
+import "./Inventory.scss";
+import InventoryList from "../../components/InventoryList/InventoryList";
+import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
+import axios from "axios";
 
-function Inventory () {
-    return (
-        <>
-        <Header/>
-        <Routes>
-            <Route path='/inventory' element={<InventoryList/>}></Route>
-            <Route path='/inventory/edit/:id' element={<EditInventoryItem/>}></Route>
-            <Route path='/inventory/add' element={<AddNewInventory/>}></Route>
-            <Route path='/inventory/:id' element={<InventoryItemDetails/>}></Route>
-        </Routes>
-        </>
-    )
+function Inventory() {
+  const [inventory, setInventory] = useState([]);
+
+  const fetchInventories = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/inventories`);
+      console.log("Inventories response" + response.data);
+      setInventory(response.data);
+    } catch (error) {
+      console.error("Error fetching inventory:", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log("Calling load component");
+    fetchInventories();
+  }, []);
+  return (
+    <div className="inventory-page">
+      <InventoryHeader />
+      <InventoryList inventories={inventory} />
+    </div>
+  );
 }
 
 export default Inventory;

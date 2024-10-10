@@ -1,0 +1,77 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-list{
+    padding:0;
+    margin:0;
+}
+
+.inventory-list-section{
+    display: flex;
+    flex-direction: column;
+
+    &__labels {
+        display: none;
+        @include body-small;
+
+        @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba($color-lightgrey, 70%);
+        color: $color-slate;
+        
+        padding:4px 32px;
+        height:40px;
+        }
+        @include desktop {
+            justify-content: unset;
+        }
+    }
+
+	&__label {
+		@include tablet {
+			&-container {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				@include desktop {
+					&-inventory {
+						width: 245.3px;
+					}
+					&-category {
+						width: 205px;
+					}
+					&-status {
+						width: 170px;
+					}
+					&-quantity {
+						width: 89px;
+					}
+					&-warehouse {
+						width: 180px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.inventory-list-section__label{
+  &-img {
+    @include tablet {
+      background: none;
+      padding: 0;
+      vertical-align: middle; 
+      width:16px;
+      height:16px;
+    }
+  }
+
+}
+
+   
