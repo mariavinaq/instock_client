@@ -1,0 +1,177 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-form {
+    &__content {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+    
+        @include tablet {
+            flex-direction: row;
+            justify-content: stretch;
+            margin: 1rem 0;
+        }
+    }
+
+    &__section {
+        padding: 0 2rem 1.5rem;
+        border-bottom: 0.0625rem solid $color-cloud;
+
+        @include tablet {
+            border-bottom: none;
+            border-right: 0.0625rem solid $color-cloud;
+            flex-grow: 1;
+            padding: 0 2rem 1rem;
+        }
+
+        @include desktop {
+            width: 40%;
+        }
+
+        &--2 {
+            border-bottom: none;
+
+            @include tablet {
+                border-right: none;
+            }
+        }
+    }
+
+    &__subheader {
+        color: $color-is-black;
+        @include subheader;
+    }
+
+    &__label {
+        height: 3.6rem;
+        display: block;
+        color: $color-is-black;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        margin-top: 1rem;
+        @include labels-links-buttons;
+        @include tablet {
+            font-weight: 600;
+            height: 3.8rem;
+        }
+    }
+
+    &__input {
+        height: 3.6rem;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem;
+        border: 0.0625rem solid $color-cloud;
+        border-radius: 1.25rem;
+        position: relative;
+
+        @include tablet {
+            height: 3.8rem;
+        }
+
+        &::placeholder {
+            color: $color-slate;
+            @include body-medium;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-is-indigo;
+            color: $color-is-black;
+        }
+
+        &--error {
+            border-color: $color-red;
+        }
+
+        &--select {
+            appearance: none;
+            background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+            background-repeat: no-repeat;
+            background-position: right center;
+            @include body-medium;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 3.6rem;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem;
+        border: 0.0625rem solid $color-cloud;
+        border-radius: 1.25rem;
+        position: relative;
+        @include body-medium;
+        @include tablet {
+            height: 3.8rem;
+        }
+
+        &::placeholder {
+            color: $color-slate;
+            @include body-medium;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $color-is-indigo;
+            color: $color-is-black;
+        }
+
+        &--error {
+            border-color: $color-red;
+        }
+    }
+
+    &__radio {
+        @include body-medium;
+    }
+
+    &__quantity {
+        display: block;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__radio-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        @include tablet {
+            justify-content: flex-start;
+            gap: 2rem;
+        }
+    }
+
+    &__buttons {
+        background-color: $color-lightgrey;
+        box-sizing: border-box;
+        display: flex;
+        width: 100%;
+        height: 57px;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include tablet {
+            justify-content: flex-end;
+            padding-right: 2rem;
+        }
+    }
+
+    &__button-wrapper {
+        width: 8rem;
+        height: 36px;
+
+        @include tablet {
+            width: unset;
+            height: 38px;
+            margin-left: 1rem;
+        }
+    }
+}
