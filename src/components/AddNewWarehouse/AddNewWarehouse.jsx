@@ -21,51 +21,61 @@ function AddNewWarehouse () {
        const response = await axios.post("http://localhost:8080/warehouses", newWarehouse)
     }
 
+    const handleReset = () => {
+        const form = document.querySelector('.addwarehouse__form');
+        if (form) {
+          form.reset();
+        }
+      };
+
     return (
         <div className='addWarehouse'>
+            <div className='addWarehouse__empty'></div>
             <div className='addWarehouse__header'>
-                <img src={arrowBack}></img>
-                <h1 className='addWarehouse__title'>Add New Warehouse</h1>
+                <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack for add new warehouse title'></img>
+                <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
             </div>
-           
-            <form onSubmit={postWarehouse} className='addwarehouse__form'>
-                <div className='addWarehouse__form-title'>
-                    <h2 className='addWarehouse__details'>Warehouse Details</h2>
+            <div className='addWarehouse__formWrapper'>
+               <form onSubmit={postWarehouse} className='addwarehouse__form'>
+                <div className='addWarehouse__form-section addWarehouse__form-warehouse'>
+                    <h2 className='addWarehouse__form-details'>Warehouse Details</h2>
 
-                    <label className='addWarehouse__form-label' htmlFor='warehouse_name'></label>
-                    <input className='addWarehouse__form-input' name='warehouse_name' id='warehouse_name'></input>
+                    <label className='addWarehouse__form-label' htmlFor='warehouse_name'>Warehouse Name</label>
+                    <input className='addWarehouse__form-input' name='warehouse_name' id='warehouse_name' placeholder='Warehouse Name'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='address'></label>
-                    <input className='addWarehouse__form-input' name='address' id='address'></input>
+                    <label className='addWarehouse__form-label' htmlFor='address'>Street Name</label>
+                    <input className='addWarehouse__form-input' name='address' id='address' placeholder='Street Name'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='city'></label>
-                    <input className='addWarehouse__form-input' name='city' id='city'></input>
+                    <label className='addWarehouse__form-label' htmlFor='city'>City</label>
+                    <input className='addWarehouse__form-input' name='city' id='city' placeholder='City'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='country'></label>
-                    <input className='addWarehouse__form-input' name='country' id='country'></input>
+                    <label className='addWarehouse__form-label' htmlFor='country'>Country</label>
+                    <input className='addWarehouse__form-input' name='country' id='country' placeholder='Country'></input>
                 </div>
 
-                <div className='addWarehouse__form-title'>
-                    <h2 className='addWarehouse__form-title'>Contact Details</h2>
+                <div className='addWarehouse__form-section addWarehouse__form-contactDetails'>
+                    <h2 className='addWarehouse__form-details'>Contact Details</h2>
                     
-                    <label className='addWarehouse__form-label' htmlFor='contact_name'></label>
-                    <input className='addWarehouse__form-input' name='contact_name' id='contact_name'></input>
+                    <label className='addWarehouse__form-label' htmlFor='contact_name'>Contact Name</label>
+                    <input className='addWarehouse__form-input' name='contact_name' id='contact_name' placeholder='Contact Name'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='contact_position'></label>
-                    <input className='addWarehouse__form-input' name='contact_position' id='contact_position'></input>
+                    <label className='addWarehouse__form-label' htmlFor='contact_position'>Position</label>
+                    <input className='addWarehouse__form-input' name='contact_position' id='contact_position' placeholder='Position'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='contact_phone'></label>
-                    <input className='addWarehouse__form-input' name='contact_phone' id='contact_phone'></input>
+                    <label className='addWarehouse__form-label' htmlFor='contact_phone'>Phone Number</label>
+                    <input className='addWarehouse__form-input' name='contact_phone' id='contact_phone' placeholder='Phone Number'></input>
 
-                    <label className='addWarehouse__form-label' htmlFor='contact_email'></label>
-                    <input className='addWarehouse__form-input' name='contact_email' id='contact_email'></input>
+                    <label className='addWarehouse__form-label' htmlFor='contact_email'>Email</label>
+                    <input className='addWarehouse__form-input' name='contact_email' id='contact_email' placeholder='Email'></input>
                 </div>
 
-                <div>
-                    <button></button>
-                    <button></button>
+                <div className='addWarehouse__form-buttons'>
+                    <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-save' type='submit'>Save</button>
                 </div>
-            </form>
+                </form> 
+            </div>
+            
         </div>
     )
 }
