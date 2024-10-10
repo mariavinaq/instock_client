@@ -1,5 +1,6 @@
 import './AddNewWarehouse.scss';
 import Header from '../../components/Header/Header';
+import arrowBack from '../../assets/Icons/arrow_back-24px.svg'
 
 function AddNewWarehouse () {
     //this is the handleSubmit function for the form 
@@ -22,7 +23,11 @@ function AddNewWarehouse () {
 
     return (
         <div className='addWarehouse'>
-            <h1 className='addWarehouse__title'></h1>
+            <div className='addWarehouse__header'>
+                <img src={arrowBack}></img>
+                <h1 className='addWarehouse__title'>Add New Warehouse</h1>
+            </div>
+           
             <form onSubmit={postWarehouse} className='addwarehouse__form'>
                 <div className='addWarehouse__form-title'>
                     <h2 className='addWarehouse__details'>Warehouse Details</h2>

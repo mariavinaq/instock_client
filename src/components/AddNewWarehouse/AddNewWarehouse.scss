@@ -2,3 +2,15 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/typography.scss' as *;
 @use '../../styles/partials/variables.scss' as *;
+
+.addWarehouse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header {
+        display: flex;
+    }
+    &__form {
+        display: flex;
+    }
+}
