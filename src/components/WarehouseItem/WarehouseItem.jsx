@@ -60,7 +60,7 @@ function WarehouseItem({ warehouse }) {
             <img
               src={editIcon}
               onClick={() =>
-                navigate(`/inventoryPage/warehouse/edit/${warehouse.id}`)
+                navigate(`/warehouses/edit/${warehouse.id}`)
               }
             />
           </button>

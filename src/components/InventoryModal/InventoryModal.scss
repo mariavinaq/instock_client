@@ -1,0 +1,28 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-modal__header {
+    font-size: 24px;
+    text-align: left;
+    margin-top: 1.5rem;
+    color: $color-is-black;
+    @include page-header;
+    @include tablet {
+        margin: 0 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.inventory-modal__message {
+
+    text-align: left;
+    margin-top: 1rem;
+    flex-grow: 1;
+
+    @include body-medium;
+    @include tablet {
+        margin: 0 3rem;
+    }
+}
