@@ -116,7 +116,7 @@ function InventoryForm ({ data, button, warehouseId }) {
                 if (id) {
                     axios.put(`http://localhost:8080/inventories/${data.id}`, requestBody)
                 } else {
-                    // axios.post('http://localhost:8080/inventories', requestBody)
+                    axios.post('http://localhost:8080/inventories', requestBody)
                 }
                 navigate(-1);
             } catch (error) {
