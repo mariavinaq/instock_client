@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AddNewInventory.scss";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg"
-import {Link} from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
 
 function AddNewInventory() {
   const [itemName, setItemName] = useState("");
@@ -10,13 +10,13 @@ function AddNewInventory() {
   const [category, setCategory] = useState(""); // Add state for category
   const [warehouse, setWarehouse] = useState(""); // Add state for warehouse
 
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="new-inventory">
         <div className="new-inventory__header-container">
-            <Link to="/" className="new-inventory__back-link">
-            <img className="new-inventory__back-img" src={backArrow} alt="back Link Image"/>
-           </Link>
+            <img className="new-inventory__back-img" src={backArrow} alt="back Link Image"  onClick={()=>navigate(-1)}/>
           <h1>Add New Inventory Item</h1>
         </div>
         <form className="new-inventory__item-details">
