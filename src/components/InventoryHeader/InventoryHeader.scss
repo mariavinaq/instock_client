@@ -66,13 +66,13 @@
   &__add-btn {
     height: 36px;
     width: 100%;
-    padding: 8px 103px;
+    padding: 8px 10px;
     border-radius: 20px;
     background-color: $color-is-indigo;
     border: none;
-    gap:10px;
     color: white;
     cursor: pointer;
+    white-space: nowrap;
 
     &:hover {
       background-color: $color-graphite;
