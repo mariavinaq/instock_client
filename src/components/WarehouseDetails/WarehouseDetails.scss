@@ -3,12 +3,12 @@
 
 .warehouse-details {
     margin: 0 1.6rem;
-    padding: $pad-increment*4 $pad-increment*3 $pad-increment*3;
-    border-bottom: 0.1rem solid $color-cloud;
     background-color: $color-white;
 
     &__header {
         display: flex;
+        padding: $pad-increment*4 $pad-increment*3 $pad-increment*3;
+        border-bottom: 0.1rem solid $color-cloud;
     }
 
     &__back {
@@ -30,5 +30,30 @@
     &__edit-button-icon {
         width: 2rem;
         height: 2rem;
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        gap: $pad-increment*4.75;
+        padding: $pad-increment*2 $pad-increment*3;
+    }
+
+    &__contact {
+        display: flex;
+        gap: $pad-increment*2;
+    }
+
+    &__contact-column {
+        width: 50%;
+    }
+
+    &__label {
+        margin-bottom: 0.25rem;
+        @include table-header;
+    }
+
+    &__data {
+        @include body-medium;
     }
 }
