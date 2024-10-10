@@ -6,6 +6,7 @@
 
     &__header {
         display: flex;
+        align-items: baseline;
         padding: $pad-increment*4 $pad-increment*3 $pad-increment*3;
         border-bottom: 0.1rem solid $color-cloud;
 
@@ -87,8 +88,8 @@
     }
 
     &__contact {
-        display: flex;
-        gap: $pad-increment*2;
+        display: flex;     
+        gap: $pad-increment*3;
 
         @include tablet {
             gap: $pad-increment*5;
@@ -100,11 +101,7 @@
     }
 
     &__column {
-        width: 50%;
-
-        @include tablet {
-            width: 13rem;
-        }
+        width: 13rem;
 
         &--address {
             width: 100%;
