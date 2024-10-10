@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import "./Warehouse.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import WarehouseHeader from "../../components/WarehouseHeader/WarehouseHeader";
-=======
-import WarehouseItemDetails from '../../components/WarehouseItemDetails/WarehouseItemDetails';
-import './Warehouse.scss';
-import { Routes, Route } from 'react-router-dom';
->>>>>>> f451230 (Save before pulling develop)
 
 function Warehouse() {
   const [warehouseData, setWarehouseData] = useState([]);

@@ -37,6 +37,7 @@
         border-radius: 50%;
         background-color: $color-is-indigo;
         color: $color-white;
+        cursor: pointer;
 
         @include tablet {
             width: min-content;

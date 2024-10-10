@@ -10,8 +10,8 @@ import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import Header from "./components/Header/Header";
 import EditWarehouseItem from "./components/EditWarehouseItem/EditWarehouseItem";
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
-import WarehouseItemDetails from "./components/WarehouseItemDetails/WarehouseItemDetails";
 import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
+import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
             ></Route>
             <Route
               path="/warehouses/:id"
-              element={<WarehouseItemDetails />}
+              element={<WarehouseDetails />}
             ></Route>
             <Route path="/inventories" element={<Inventory />}></Route>
             <Route
