@@ -1,0 +1,127 @@
+@use "../../styles/partials/global.scss";
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss";
+@use "../../styles/partials/variables.scss" as *;
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+label {
+  font-weight: 700;
+  display: block;
+  padding: 1.6rem 0rem 0.5rem 0rem; 
+}
+
+input {
+  width: 100%;
+  height: 3.6rem;
+
+  &::placeholder {
+    color: $color-slate;
+  }
+}
+
+.new-inventory {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 0.2rem;
+
+  &__header-container {
+    padding: 2.4rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__item-details {
+    padding: 1.6rem 2.4rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__item-avail {
+    padding: 1.6rem 2.4rem;
+  }
+
+  &__description-input {
+    height: 12rem;
+  }
+
+  &__dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  
+    select {
+      appearance: none; // Remove default arrow
+      width: 100%;
+      padding: 1rem;
+      padding-right: 3rem; // Make space for the custom arrow
+      border: 1px solid #ccc;
+      border-radius: 2rem;
+      color: $color-slate;
+      cursor: pointer;
+      background: url('../../assets/Icons/arrow_drop_down-24px.svg') no-repeat right 1rem center;
+      background-size: 2rem; // Adjust size of the arrow
+  
+      &:focus {
+        outline: none;
+        border-color: #2e66e5; // Example focus state
+      }
+    }
+
+  }
+
+  &__radio-btns {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      display: flex;
+      width: 50%;
+      font-weight: 400;
+      padding-top:0;
+    }
+  }
+
+  &__radio-btn {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-right: 1rem;
+  }
+
+  &__btns-container {
+    padding: 2.4rem;
+    background-color: $color-lightgrey;
+  }
+
+  &__btn {
+    width: 50%;
+    border-radius: 2rem;
+    border: 1px solid #ccc;
+    height: 3.6rem;
+    background-color: white;
+    color: $color-slate;
+    font-weight: 600;
+
+    &:hover {
+      border: 1px solid $color-is-indigo;
+      color: $color-is-indigo;
+    }
+
+    @include tablet {
+      padding: 1.6rem;
+      height: 3.8rem;
+    }
+
+    &--add {
+      background-color: $color-is-indigo;
+      color: white;
+
+      &:hover {
+        background-color: $color-graphite;
+        color:white;
+        
+      }
+    }
+  }
+}
