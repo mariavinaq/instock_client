@@ -22,7 +22,7 @@ function WarehouseInfo ({ warehouse }) {
                 <div className='warehouse-details__address'>
                     <div className='warehouse-details__column warehouse-details__column--address'>
                         <p className='warehouse-details__label'>Warehouse Address:</p>
-                        <p className='warehouse-details__data'>{warehouse.address}</p>
+                        <p className='warehouse-details__data'>{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                     </div>
                 </div>
                 <div className='warehouse-details__contact'>
