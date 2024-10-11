@@ -55,7 +55,7 @@ function AddNewWarehouse () {
                 <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
             </div>
             <div className='addWarehouse__formWrapper'>
-               <form onSubmit={postWarehouse} className='addwarehouse__form'>
+               <form onSubmit={handleSubmit} className='addwarehouse__form'>
 
                 <div className='addWarehouse__form-sections'>
                    <div className='addWarehouse__form-section addWarehouse__form-warehouse'>
@@ -93,7 +93,7 @@ function AddNewWarehouse () {
                 
                 <div className='addWarehouse__form-buttons'>
                     <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
-                    <button className='addWarehouse__form-button addWarehouse__form-add' type='submit' onClick={handleSubmit}>+ Add Warehouse</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-add' type='submit'>+ Add Warehouse</button>
                 </div>
                 </form> 
             </div>
