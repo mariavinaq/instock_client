@@ -58,30 +58,6 @@
         }
     }
 
-    // &__name-container {
-    //     @include tablet {
-    //         flex: 5.5;
-    //     }
-    // }
-
-    // &__category-container {
-    //     @include tablet {
-    //         flex: 4.5;
-    //     }
-    // }
-
-    // &__status-container {
-    //     @include tablet {
-    //         flex: 3;
-    //     }
-    // }
-
-    // &__quantity-container {
-    //     @include tablet {
-    //         flex: 2;
-    //     }
-    // }
-
     &__name-container {
         @include tablet {
             width: 23%;
@@ -112,7 +88,7 @@
         text-decoration: none;
         margin-top: 0;
         @include body-medium;
-
+        @include chevron-parent;
     }
 
     &__name {
@@ -157,6 +133,7 @@
     &__chevron {
         height: 2rem;
         margin-left: 0.25rem;
+        @include chevron-transition;
     }
 
     &__status {

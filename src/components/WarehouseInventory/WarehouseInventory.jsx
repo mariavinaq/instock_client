@@ -3,6 +3,7 @@ import SortIcon from '../../assets/Icons/sort-24px.svg'
 import WarehouseInventoryItem from '../WarehouseInventoryItem/WarehouseInventoryItem';
 
 function WarehouseInventory() {
+// function WarehouseInventory({ inventory }) {
     return (
         <section className="warehouse-inventory">
             <div className="warehouse-inventory__labels">
@@ -27,12 +28,7 @@ function WarehouseInventory() {
                 </div>
             </div>
             <ul className="warehouse-inventory__items">
-                    {/* {inventories.map((item) => (
-                        <InventoryItem
-                            key={item.id}
-                            inventory={item}
-                        />
-                    ))} */}
+                    {/* {inventory.map(item => <WarehouseInventoryItem key={item.id} item={item} />)} */}
                     <WarehouseInventoryItem />
                 </ul>
         </section>
