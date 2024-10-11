@@ -3,7 +3,17 @@
 @use "../../styles/partials/typography.scss";
 @use "../../styles/partials/variables.scss" as *;
 
-input {
+.new-inventory {
+  background-color: white;
+  border-radius: 0.2rem;
+
+&__label {
+    font-weight: 700;
+    display: block;
+    padding: 1.6rem 0rem 0.4rem 0rem;
+  }
+
+&__input {
   border: 1px solid $color-cloud;
   border-radius: 2rem;
   padding: 1rem;
@@ -18,16 +28,11 @@ input {
     border: 1px solid $color-is-indigo;
     outline: none;
   }
-}
-label {
-  font-weight: 700;
-  display: block;
-  padding: 1.6rem 0rem 0.4rem 0rem;
-}
 
-.new-inventory {
-  background-color: white;
-  border-radius: 0.2rem;
+  &--description {
+    height: 12rem;
+  }
+}
 
   &__header-container {
     padding: 2.4rem;
@@ -63,10 +68,6 @@ label {
     }
   }
 
-  &__description-input {
-    height: 12rem;
-  }
-
   &__dropdown {
     position: relative;
     display: inline-block;
@@ -87,7 +88,7 @@ label {
 
       &:focus {
         outline: none;
-        border-color: $color-is-indigo;
+        border-color: $color-slate;
       }
     }
   }

@@ -3,7 +3,6 @@ import axios from "axios";
 import "./AddNewInventory.scss";
 import { useNavigate } from "react-router-dom";
 import InventoryFormHeader from "../InventoryFormHeader/InventoryFormHeader";
-import { v4 as uuidv4 } from "uuid";
 import FormError from "../FormError/FormError";
 
 function AddNewInventory() {
@@ -48,7 +47,6 @@ function AddNewInventory() {
     const newId = uuidv4();
 
     const newInventoryItem = {
-      id: newId,
       warehouse_id: Number(warehouse),
       item_name: itemName,
       description: description,
@@ -72,12 +70,12 @@ function AddNewInventory() {
         <form className="new-inventory__form" onSubmit={handleSubmit}>
           <div className="new-inventory__item-details">
             <h2>Item Details</h2>
-            <label>Item Name</label>
+            <label className="new-inventory__label">Item Name</label>
             <input
               type="text"
               name="itemName"
               placeholder="Item Name"
-              className={`new-inventory__name-input ${
+              className={`new-inventory__input new-inventory__input--name ${
                 error && !itemName ? "inventory-form__input--error" : ""
               } `}
               id="itemNameInput"
@@ -87,12 +85,12 @@ function AddNewInventory() {
             <FormError errorState={error} field={itemName}>
               Item is required
             </FormError>
-            <label>Description</label>
+            <label className="new-inventory__label">Description</label>
             <input
               type="text"
               name="description"
               placeholder="Please enter a brief item description..."
-              className={`new-inventory__description-input ${
+              className={`new-inventory__input new-inventory__input--description ${
                 error && !description ? "inventory-form__input--error" : ""
               }`}
               id="descriptionInput"
@@ -102,7 +100,7 @@ function AddNewInventory() {
             <FormError errorState={error} field={description}>
               Description is required
             </FormError>{" "}
-            <label>Category</label>
+            <label className="new-inventory__label">Category</label>
             <div className="new-inventory__dropdown">
               <select
                 value={category}
@@ -113,11 +111,11 @@ function AddNewInventory() {
                 <option value="" disabled>
                   Please select
                 </option>
-                <option value="electronics">Electronics</option>
-                <option value="gear">Gear</option>
-                <option value="apparel">Apparel</option>
-                <option value="accessories">Accessories</option>
-                <option value="health">Health</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Gear">Gear</option>
+                <option value="Apparel">Apparel</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Health">Health</option>
               </select>
               <FormError errorState={error} field={category}>
                 Category is required
@@ -127,35 +125,35 @@ function AddNewInventory() {
 
           <div className="new-inventory__item-avail">
             <h2>Item Availability</h2>
-            <label>Status</label>
+            <label className="new-inventory__label">Status</label>
             <div className="new-inventory__radio-btns">
               <input
                 type="radio"
                 name="status"
-                value="inStock"
+                value="In Stock"
                 className="new-inventory__radio-btn"
                 id="inStock"
-                onChange={() => setStatus("inStock")}
+                onChange={() => setStatus("In Stock")}
               />
-              <label htmlFor="inStock">In stock</label>
+              <label htmlFor="inStock" className="new-inventory__label">In stock</label>
 
               <input
                 type="radio"
                 name="status"
-                value="outOfStock"
+                value="Out Of Stock"
                 className="new-inventory__radio-btn"
                 id="outOfStock"
-                onChange={() => setStatus("outOfStock")}
+                onChange={() => setStatus("Out Of Stock")}
               />
-              <label htmlFor="outOfStock">Out of stock</label>
+              <label htmlFor="outOfStock" className="new-inventory__label">Out of stock</label>
             </div>
 
-            <label>Quantity</label>
+            <label className="new-inventory__label">Quantity</label>
             <input
               type="text"
               name="quantity"
               placeholder=" "
-              className={`new-inventory__quantity-input ${
+              className={`new-inventory__input new-inventory__input--quantity ${
                 error && !quantity ? "inventory-form__input--error" : ""
               }`}
               id="quantityInput"
@@ -166,7 +164,7 @@ function AddNewInventory() {
               Quantity is required
             </FormError>
 
-            <label>Warehouse</label>
+            <label className="new-inventory__label">Warehouse</label>
             <div className="new-inventory__dropdown">
               <select
                 value={warehouse}
