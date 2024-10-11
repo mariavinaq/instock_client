@@ -3,14 +3,24 @@ import "./Inventory.scss";
 import InventoryList from "../../components/InventoryList/InventoryList";
 import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
 import axios from "axios";
+import InventoryModal from "../../components/InventoryModal/InventoryModal";
 
 function Inventory() {
   const [inventory, setInventory] = useState([]);
+  const [inventoryModalOpen, setInventoryModalOpen] = useState(false);
+  const [selectedInventory, setSelectedInventory] = useState("");
+  const handleOpenInventoryModal = (event) => {
+    const id = Number(event.target.id);
+    setSelectedInventory(id);
+    setInventoryModalOpen(true);
+  };
 
+  const handleCloseInventoryModal = () => {
+    setInventoryModalOpen(false);
+  };
   const fetchInventories = async () => {
     try {
       const response = await axios.get(`http://localhost:8080/inventories`);
-      console.log("Inventories response" + response.data);
       setInventory(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -18,14 +28,24 @@ function Inventory() {
   };
 
   useEffect(() => {
-    console.log("Calling load component");
     fetchInventories();
   }, []);
   return (
-    <div className="inventory-page">
-      <InventoryHeader />
-      <InventoryList inventories={inventory} />
-    </div>
+    <>
+      <InventoryModal
+        isOpen={inventoryModalOpen}
+        onClose={handleCloseInventoryModal}
+        inventoryId={selectedInventory}
+        fetchData={fetchInventories}
+      />
+      <div className="inventory-page">
+        <InventoryHeader />
+        <InventoryList
+          inventories={inventory}
+          handleOpenInventoryModal={handleOpenInventoryModal}
+        />
+      </div>
+    </>
   );
 }
 

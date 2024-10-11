@@ -1,7 +1,7 @@
 import "./InventoryList.scss";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import InventoryItem from "../InventoryItem/InventoryItem";
-function InventoryList({ inventories }) {
+function InventoryList({ inventories, handleOpenInventoryModal }) {
   return (
     <div>
       <section className="inventory-list-section">
@@ -54,7 +54,7 @@ function InventoryList({ inventories }) {
         </div>
         <ul className="inventory-list">
           {inventories.map((item) => (
-            <InventoryItem key={item.id} inventory={item} />
+            <InventoryItem key={item.id} inventory={item} handleOpenInventoryModal={handleOpenInventoryModal} />
           ))}
         </ul>
       </section>
