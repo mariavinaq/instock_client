@@ -1,6 +1,6 @@
 import './AddNewWarehouse.scss';
 import Header from '../../components/Header/Header';
-import arrowBack from '../../assets/Icons/arrow_back-24px.svg'
+import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -49,7 +49,7 @@ function AddNewWarehouse () {
             <div className='addWarehouse__empty'></div>
             <div className='addWarehouse__header'>
                 <Link to={"/"}>
-                    <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack for add new warehouse title'></img>    
+                    <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack'></img>    
                 </Link>
                 
                 <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
