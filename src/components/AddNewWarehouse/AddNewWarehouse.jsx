@@ -27,15 +27,15 @@ function AddNewWarehouse () {
 
     const navigate = useNavigate();
     
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //     await postWarehouse(event);
-    //     navigate(-1); // Go back one page in the history
-    //     } catch (error) {
-    //     console.error('Error submitting form:', error);
-    //     }
-    // };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+        await postWarehouse(event);
+        navigate("/warehouses"); // Go back one page in the history
+        } catch (error) {
+        console.error('Error submitting form:', error);
+        }
+    };
 
     const handleReset = () => {
         const form = document.querySelector('.addwarehouse__form');
@@ -48,7 +48,7 @@ function AddNewWarehouse () {
         <div className='addWarehouse'>
             <div className='addWarehouse__empty'></div>
             <div className='addWarehouse__header'>
-                <Link to={"/"}>
+                <Link to={"/warehouses"}>
                     <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack'></img>    
                 </Link>
                 
@@ -93,7 +93,7 @@ function AddNewWarehouse () {
                 
                 <div className='addWarehouse__form-buttons'>
                     <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
-                    <button className='addWarehouse__form-button addWarehouse__form-add' type='submit'>+ Add Warehouse</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-add' type='submit' onClick={handleSubmit}>+ Add Warehouse</button>
                 </div>
                 </form> 
             </div>
