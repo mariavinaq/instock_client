@@ -1,0 +1,173 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-details {
+	padding: 24px;
+    display: flex;
+	flex-direction: column;
+	
+	@include tablet {
+		flex-direction: row;
+		padding: 32px;
+	}
+
+	&__container1{
+		display: flex;
+		flex-direction: column;
+	
+		@include tablet {
+			flex:5;
+			margin-right:2rem;
+			border-right: 1px solid $color-cloud;
+		}
+	}
+
+	&__container2{
+		display: flex;
+		flex-direction: column;
+	
+		@include tablet {
+			flex:5;
+			margin-bottom: 0;
+		}
+	}
+
+	&__status-and-quantity{
+		display: flex;
+		flex-direction: row;
+	
+		@include tablet {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.inventory-description,
+.inventory-category,
+.inventory-quantity,
+.inventory-warehouse {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 16px;
+	padding:0;
+	font-weight: 400;
+    @include body-medium;
+	@include tablet {
+		flex: 1;
+		gap: 0;
+		margin-bottom: 0;
+	}
+
+	&__label {
+		margin: 0;
+		font-weight: 600;
+		padding-bottom: 4px;
+		color: $color-slate;
+        @include table-header;
+		@include tablet {
+			font-weight: 600;
+			padding-bottom: 4px;
+		}
+	}
+
+	&__content {
+		display: inline-block; 
+		padding:0;
+		margin:0;
+		line-height: 20px;
+		font-size:13px;
+		color:$color-is-black;
+	
+		@include tablet {
+			line-height: 26px; 
+			font-size:14px;
+		}
+	}
+}
+
+.inventory-description {
+	&__content {
+		width:295px;
+
+		@include tablet {
+			margin-bottom:28px;
+		}
+
+		@include desktop {
+			margin-bottom:1rem;
+		}
+	}
+}
+
+.inventory-status {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+
+	@include tablet {
+		flex: 1;
+		gap: 0;
+		margin-bottom: 0;
+	}
+
+	&__label {
+		margin: 0;
+		font-weight: 600;
+		padding-bottom: 4px;
+		font-size:11px;
+		color: $color-slate;
+        @include table-header;
+		
+
+		@include tablet {
+			font-size:12px;
+			font-weight: 600;
+		}
+	}
+
+	&__content {
+		border-radius: 20px;
+		display: inline-block; 
+    	justify-content: center;
+    	align-items: center;
+		text-transform: uppercase;
+		white-space: nowrap;
+		margin: 0;
+		padding: 4px 8px; 
+		line-height: 20px;
+		margin-bottom: 16px;
+		font-weight: 600;
+		font-size:11px;
+		cursor: pointer;
+	
+		@include tablet {
+			line-height: 22px; 
+		}
+
+		&.in-stock {
+			background-color: rgba($color-green, 7%);
+			color: $color-green;
+			width:52px;
+		}
+
+		&.out-of-stock {
+			background-color: rgba($color-red, 7%);
+			color: $color-red; 
+			width:70px;
+		}
+	}
+}
+
+.inventory-warehouse {
+	margin-bottom: 8px;
+}
+
+.inventory-quantity {
+    display: flex;
+	flex-direction: column;
+	@include tablet {
+		margin-bottom: 16px;
+	}
+}

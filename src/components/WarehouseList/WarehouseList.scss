@@ -1,0 +1,69 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.warehouse-list{
+    padding:0;
+    margin:0;
+}
+.warehouse-list-section{
+    display: flex;
+    flex-direction: column;
+    &__labels {
+        display: none;
+        @include body-small;
+        @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba($color-lightgrey, 70%);
+        color: $color-slate;
+        padding:4px 32px;
+        height:40px;
+        }
+        // @include desktop {
+        //     justify-content:flex-s;
+        // }
+    }
+	&__label {
+		@include tablet {
+			&-container {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				@include desktop {
+					&-warehouse {
+						flex: 1;
+					}
+					&-address {
+                        flex: 1;
+					}
+					&-name{
+                        flex: 1 ;
+					}
+					&-info {
+                        flex: 1 2rem ;
+					}
+					
+				}
+			}
+		}
+	}
+}
+
+.warehouse-list-section__label{
+  &-img {
+    @include tablet {
+      background: none;
+      padding: 0;
+      vertical-align: middle; 
+      width:16px;
+      height:16px;
+    }
+  }
+
+}
+
+   

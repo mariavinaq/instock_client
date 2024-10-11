@@ -1,0 +1,88 @@
+@use '../../styles/partials/global.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-details {
+	&-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding:24px;
+
+		@include tablet {
+			border-bottom: 1px solid $color-cloud;
+			padding: 32px 32px 24px;
+		}
+
+		&__nav {
+			display: flex;
+			align-items: center;
+			color:$color-is-black;
+
+			&-arrow {
+				padding-top:0.5rem;
+				cursor: pointer;
+			}
+			
+			&-current {
+				margin: 0;
+				margin-left: 4px;
+                @include page-header;
+			}
+		}
+
+		&__btn {
+			border: none;
+			display: flex;
+			background-color: transparent;
+			justify-content: row;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 36px;
+				height: 36px;
+				border-radius:50px;
+				text-decoration: none;
+				border: 1px solid $color-cloud;
+				text-decoration: none;
+							
+				&:hover {
+					background-color: $color-graphite; 
+				}
+
+				@include tablet {
+					border-radius: 20px;
+					width: 81px;
+					background-position: calc(100% - 3rem) center;
+				}
+			}
+
+			&-text {
+				display:none;
+				@include tablet {
+					display:flex;
+					color: $color-is-black;
+					padding:4px;
+					gap: 10px;
+
+					&:hover {
+						color: #FFFFFF;
+					}
+				}
+			}
+
+			&-edit img {
+				width:20px;
+				height:20px;
+				fill: #FFFFFF;
+			}
+		}
+	}
+}
