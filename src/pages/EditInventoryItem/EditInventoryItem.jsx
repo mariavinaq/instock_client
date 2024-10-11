@@ -45,7 +45,7 @@ function EditInventoryItem () {
     if (error) {
         return (
             <div className='error-message'>
-                Inventory item not found.lease return to the&nbsp; <Link to='/inventories'>inventory page</Link>.
+                Inventory item not found. Please return to the&nbsp; <Link to='/inventories'>inventory page</Link>.
             </div>
         ) 
     } else if (!warehouseId) {
