@@ -4,7 +4,7 @@ import "./AddNewInventory.scss";
 import { useNavigate } from "react-router-dom";
 import InventoryFormHeader from "../InventoryFormHeader/InventoryFormHeader";
 import { v4 as uuidv4 } from "uuid";
-import FormError from '../FormError/FormError';
+import FormError from "../FormError/FormError";
 
 function AddNewInventory() {
   const [itemName, setItemName] = useState("");
@@ -84,7 +84,9 @@ function AddNewInventory() {
               value={itemName}
               onChange={(e) => setItemName(e.target.value)}
             />
-            <FormError errorState={error} field={itemName}>Item is required</FormError>
+            <FormError errorState={error} field={itemName}>
+              Item is required
+            </FormError>
             <label>Description</label>
             <input
               type="text"
@@ -97,14 +99,16 @@ function AddNewInventory() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
-<FormError errorState={error} field={description}>Description is required</FormError>            <label>Category</label>
+            <FormError errorState={error} field={description}>
+              Description is required
+            </FormError>{" "}
+            <label>Category</label>
             <div className="new-inventory__dropdown">
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className={
-                  `inventory-form__input inventory-form__input--select
-                  ${error && !category ? 'inventory-form__input--error' : ""}`}
+                className={`inventory-form__input inventory-form__input--select
+                  ${error && !category ? "inventory-form__input--error" : ""}`}
               >
                 <option value="" disabled>
                   Please select
@@ -115,7 +119,9 @@ function AddNewInventory() {
                 <option value="accessories">Accessories</option>
                 <option value="health">Health</option>
               </select>
-              <FormError errorState={error} field={category}>Category is required</FormError>
+              <FormError errorState={error} field={category}>
+                Category is required
+              </FormError>
             </div>
           </div>
 
@@ -156,17 +162,17 @@ function AddNewInventory() {
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
             />
-            <FormError errorState={error && !quantity} field={quantity}>Quantity is required</FormError>
+            <FormError errorState={error && !quantity} field={quantity}>
+              Quantity is required
+            </FormError>
 
             <label>Warehouse</label>
             <div className="new-inventory__dropdown">
               <select
                 value={warehouse}
                 onChange={(e) => setWarehouse(e.target.value)}
-                className={
-                  `inventory-form__input inventory-form__input--select
-                  ${error && !warehouse ? 'inventory-form__input--error' : ""}`
-              }
+                className={`inventory-form__input inventory-form__input--select
+                  ${error && !warehouse ? "inventory-form__input--error" : ""}`}
               >
                 <option value="" disabled>
                   Please select
@@ -177,7 +183,9 @@ function AddNewInventory() {
                   </option>
                 ))}
               </select>
-              <FormError errorState={error} field={warehouse}>Warehouse is required</FormError>
+              <FormError errorState={error} field={warehouse}>
+                Warehouse is required
+              </FormError>
             </div>
           </div>
 
