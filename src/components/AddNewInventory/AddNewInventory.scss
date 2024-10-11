@@ -4,42 +4,63 @@
 @use "../../styles/partials/variables.scss" as *;
 
 input {
-  border: 1px solid #ccc;
+  border: 1px solid $color-cloud;
   border-radius: 2rem;
   padding: 1rem;
-}
-label {
-  font-weight: 700;
-  display: block;
-  padding: 1.6rem 0rem 0.5rem 0rem; 
-}
-
-input {
   width: 100%;
   height: 3.6rem;
 
   &::placeholder {
     color: $color-slate;
   }
+
+  &:focus {
+    border: 1px solid $color-is-indigo;
+    outline: none;
+  }
+}
+label {
+  font-weight: 700;
+  display: block;
+  padding: 1.6rem 0rem 0.4rem 0rem;
 }
 
 .new-inventory {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-radius: 0.2rem;
 
   &__header-container {
     padding: 2.4rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $color-cloud;
   }
 
   &__item-details {
     padding: 1.6rem 2.4rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $color-cloud;
   }
 
   &__item-avail {
     padding: 1.6rem 2.4rem;
+  }
+
+  @include tablet {
+    &__form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__item-details {
+      width: 50%;
+      border-bottom: none;
+      border-right: 1px solid $color-cloud;
+      padding-right: 3.6rem;
+    }
+
+    &__item-avail {
+      width: 48%;
+      border-bottom: none;
+    }
   }
 
   &__description-input {
@@ -50,25 +71,25 @@ input {
     position: relative;
     display: inline-block;
     width: 100%;
-  
+
     select {
-      appearance: none; // Remove default arrow
+      appearance: none;
       width: 100%;
       padding: 1rem;
-      padding-right: 3rem; // Make space for the custom arrow
-      border: 1px solid #ccc;
+      padding-right: 4rem;
+      border: 1px solid $color-cloud;
       border-radius: 2rem;
       color: $color-slate;
       cursor: pointer;
-      background: url('../../assets/Icons/arrow_drop_down-24px.svg') no-repeat right 1rem center;
-      background-size: 2rem; // Adjust size of the arrow
-  
+      background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
+        right 1rem center;
+      background-size: 2rem;
+
       &:focus {
         outline: none;
-        border-color: #2e66e5; // Example focus state
+        border-color: $color-is-indigo;
       }
     }
-
   }
 
   &__radio-btns {
@@ -79,29 +100,44 @@ input {
       display: flex;
       width: 50%;
       font-weight: 400;
-      padding-top:0;
+      padding-top: 0;
     }
   }
 
   &__radio-btn {
     height: 1.6rem;
     width: 1.6rem;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
+
+    &:not(:checked) + label {
+      color: $color-slate;
+    }
   }
 
   &__btns-container {
     padding: 2.4rem;
     background-color: $color-lightgrey;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+
+    @include tablet{
+      justify-content: flex-end;
+    }
   }
 
   &__btn {
     width: 50%;
     border-radius: 2rem;
-    border: 1px solid #ccc;
+    border: 1px solid $color-cloud;
     height: 3.6rem;
     background-color: white;
     color: $color-slate;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       border: 1px solid $color-is-indigo;
@@ -111,6 +147,8 @@ input {
     @include tablet {
       padding: 1.6rem;
       height: 3.8rem;
+      width: unset;
+      padding: 0 1rem;
     }
 
     &--add {
@@ -119,8 +157,7 @@ input {
 
       &:hover {
         background-color: $color-graphite;
-        color:white;
-        
+        color: white;
       }
     }
   }
