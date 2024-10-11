@@ -13,7 +13,7 @@ function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
       <div className="warehouse-item__main-container">
         <div className="warehouse-item__details-container">
           <div className="warehouse-item__name-container">
-            <p className="warehouse-item__label-mobile">INVENTORY ITEM</p>
+            <p className="warehouse-item__label-mobile">WAREHOUSE</p>
             <Link
               to={`/warehouses/${warehouse.id}`}
               className="warehouse-item__name-sub-container"
@@ -28,7 +28,7 @@ function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
           </div>
           <div className="warehouse-item__detail-container">
             <p className="warehouse-item__label-mobile">ADDRESS</p>
-            <p className="warehouse-item__category">{warehouse.address}</p>
+            <p className="warehouse-item__detail">{warehouse.address}</p>
           </div>
         </div>
         <div className="warehouse-item__info-container">
