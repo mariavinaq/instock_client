@@ -2,7 +2,7 @@ import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import "./WarehouseList.scss";
 
-function WarehouseList({ warehouses }) {
+function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
   return (
     <>
       <section className="warehouse-list-section">
@@ -48,7 +48,11 @@ function WarehouseList({ warehouses }) {
         </div>
         <ul className="warehouse-list">
           {warehouses.map((item) => (
-            <WarehouseItem key={item.id} warehouse={item} />
+            <WarehouseItem
+              key={item.id}
+              warehouse={item}
+              handleOpenWarehouseModal={handleOpenWarehouseModal}
+            />
           ))}
         </ul>
       </section>

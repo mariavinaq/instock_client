@@ -10,7 +10,8 @@
     height: 100%;
     max-width: unset;
     max-height: unset;
-    
+    border-radius: 4px;
+    padding: 2rem;
     @include tablet {
         margin: 186px auto;
         height: 262px;

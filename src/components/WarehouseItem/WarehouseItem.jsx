@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import ChevronRightIcon from "../../assets/icons/chevron_right-24px.svg";
 
-function WarehouseItem({ warehouse }) {
+function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
   const navigate = useNavigate();
 
   return (
@@ -52,16 +52,18 @@ function WarehouseItem({ warehouse }) {
       <div className="warehouse-item__actions">
         <div className="warehouse-item__actions-container">
           <button aria-label="Delete item" className="warehouse-item__delete">
-            <img src={deleteicon} id={warehouse.id} />
+            <img
+              src={deleteicon}
+              id={warehouse.id}
+              onClick={handleOpenWarehouseModal}
+            />
           </button>
         </div>
         <div className="warehouse-item__actions-container">
           <button aria-label="Delete item" className="warehouse-item__delete">
             <img
               src={editIcon}
-              onClick={() =>
-                navigate(`/warehouses/edit/${warehouse.id}`)
-              }
+              onClick={() => navigate(`/warehouses/edit/${warehouse.id}`)}
             />
           </button>
         </div>
