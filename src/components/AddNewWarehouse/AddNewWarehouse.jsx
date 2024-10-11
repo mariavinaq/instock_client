@@ -1,7 +1,8 @@
 import './AddNewWarehouse.scss';
 import Header from '../../components/Header/Header';
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg'
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function AddNewWarehouse () {
     //this is the handleSubmit function for the form 
@@ -20,7 +21,21 @@ function AddNewWarehouse () {
         }
 
        const response = await axios.post("http://localhost:8080/warehouses", newWarehouse)
+
+       form.reset();
     }
+
+    const navigate = useNavigate();
+    
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     try {
+    //     await postWarehouse(event);
+    //     navigate(-1); // Go back one page in the history
+    //     } catch (error) {
+    //     console.error('Error submitting form:', error);
+    //     }
+    // };
 
     const handleReset = () => {
         const form = document.querySelector('.addwarehouse__form');
