@@ -1,34 +1,40 @@
-@use '../../styles/partials/global.scss' as *;
-@use '../../styles/partials/mixins.scss' as *;
-@use '../../styles/partials/typography.scss' as *;
-@use '../../styles/partials/variables.scss' as *;
+@use "../../styles/partials/global.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/typography.scss" as *;
+@use "../../styles/partials/variables.scss" as *;
 
 .inventory-form {
-    &__header {
-        border-bottom: 0.0625rem solid $color-cloud;
-        display: flex;
-        justify-content: left;
-        margin-top: 0;
-        background-color: #ffffff;
-				padding: 36px 24px 24px;
-				
-				@include tablet {
-					padding: 32px 32px 24px;
-				}
-    }
+  &__header {
+    border-bottom: 1px solid $color-cloud;
+    display: flex;
+    justify-content: left;
+    margin-top: 0;
+    background-color: #ffffff;
+    padding: 3.2rem 2.4rem 2.4rem;
+    align-items: flex-start; 
+    border-radius: 0.2rem;
 
-    &__back-icon {
-
-        @include tablet {
-            margin: 0;
-        }
+    @include tablet {
+      padding: 3.2rem 3.2rem 2.4rem;
     }
+  }
 
-    &__title {
-        color: $color-is-black;
-        font-weight: 600;
-        margin:0;
-        margin-left: 4px;
-        @include page-header;
+  &__back-icon {
+    align-self: flex-start;
+    cursor: pointer; 
+    margin-top: 1rem;
+
+    @include tablet {
+        margin: 0;
+        margin-top:1rem;
     }
+}
+
+  &__title {
+    color: $color-is-black;
+    font-weight: 600;
+    margin: 0;
+    margin-left:0.5rem;
+    @include page-header;
+  }
 }
