@@ -89,3 +89,13 @@
     line-height: 1.8rem;
   }
 }
+
+@mixin chevron-transition {
+  transition: transform 330ms ease-in-out;
+}
+
+@mixin chevron-parent {
+  &:hover :nth-last-child(1) {
+    transform: translateX(50%);
+  }
+}
