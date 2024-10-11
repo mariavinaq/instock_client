@@ -1,8 +1,24 @@
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import "./WarehouseList.scss";
+import { useEffect, useState } from "react";
 
-function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
+function WarehouseList({
+  warehouses,
+  results,
+  handleOpenWarehouseModal,
+  keyword,
+}) {
+  const [isSearch, setIsSearch] = useState(false);
+
+  useEffect(() => {
+    if (keyword) {
+      setIsSearch(true);
+    } else {
+      setIsSearch(false);
+    }
+  }, [keyword]);
+
   return (
     <>
       <section className="warehouse-list-section">
@@ -47,7 +63,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
           </div>
         </div>
         <ul className="warehouse-list">
-          {warehouses.map((item) => (
+          {(isSearch ? results : warehouses).map((item) => (
             <WarehouseItem
               key={item.id}
               warehouse={item}

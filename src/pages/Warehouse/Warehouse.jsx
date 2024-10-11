@@ -9,6 +9,9 @@ function Warehouse() {
   const [warehouseData, setWarehouseData] = useState([]);
   const [warehouseModalOpen, setWarehouseModalOpen] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState([]);
+
   const handleOpenWarehouseModal = (event) => {
     const id = Number(event.target.id);
     setSelectedWarehouse(id);
@@ -33,6 +36,28 @@ function Warehouse() {
     fetchWarehouses();
   }, []);
 
+  useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/warehouses/match/${keyword}`
+        );
+
+        setResults(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const debounceFetch = setTimeout(() => {
+      if (keyword) {
+        fetchResults();
+      }
+    }, 300); // Adjust the debounce delay as needed
+
+    return () => clearTimeout(debounceFetch);
+  }, [keyword]);
+
   return (
     <>
       <WarehouseModal
@@ -41,10 +66,12 @@ function Warehouse() {
         warehouseId={selectedWarehouse}
         fetchData={fetchWarehouses}
       />
-      <WarehouseHeader />
+      <WarehouseHeader keyword={keyword} setKeyword={setKeyword} />
       <WarehouseList
         warehouses={warehouseData}
+        results={results}
         handleOpenWarehouseModal={handleOpenWarehouseModal}
+        keyword={keyword}
       />
     </>
   );
