@@ -121,6 +121,10 @@
             @include tablet {
                 width: 8rem;
             }
+            &:hover {
+                border: solid #2E66E5;
+                color: #2E66E5;
+            }
         }
         &-add {
             border: none;
@@ -128,6 +132,9 @@
             color: #ffffff;
             @include tablet {
                 width: 15rem;
+            }
+            &:hover {
+                background-color: #232940;
             }
         }
     }

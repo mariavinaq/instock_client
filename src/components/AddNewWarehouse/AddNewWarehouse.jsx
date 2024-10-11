@@ -1,6 +1,7 @@
 import './AddNewWarehouse.scss';
 import Header from '../../components/Header/Header';
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg'
+import { Link, NavLink } from "react-router-dom";
 
 function AddNewWarehouse () {
     //this is the handleSubmit function for the form 
@@ -32,7 +33,10 @@ function AddNewWarehouse () {
         <div className='addWarehouse'>
             <div className='addWarehouse__empty'></div>
             <div className='addWarehouse__header'>
-                <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack for add new warehouse title'></img>
+                <Link to={"/"}>
+                    <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack for add new warehouse title'></img>    
+                </Link>
+                
                 <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
             </div>
             <div className='addWarehouse__formWrapper'>
