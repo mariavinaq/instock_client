@@ -5,7 +5,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import deleteicon from "../../assets/icons/delete_outline-24px.svg";
 import ChevronRightIcon from "../../assets/icons/chevron_right-24px.svg";
 
-function WarehouseItem({ warehouse }) {
+function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
   const navigate = useNavigate();
 
   return (
@@ -13,7 +13,7 @@ function WarehouseItem({ warehouse }) {
       <div className="warehouse-item__main-container">
         <div className="warehouse-item__details-container">
           <div className="warehouse-item__name-container">
-            <p className="warehouse-item__label-mobile">INVENTORY ITEM</p>
+            <p className="warehouse-item__label-mobile">WAREHOUSE</p>
             <Link
               to={`/warehouses/${warehouse.id}`}
               className="warehouse-item__name-sub-container"
@@ -28,7 +28,7 @@ function WarehouseItem({ warehouse }) {
           </div>
           <div className="warehouse-item__detail-container">
             <p className="warehouse-item__label-mobile">ADDRESS</p>
-            <p className="warehouse-item__category">{warehouse.address}</p>
+            <p className="warehouse-item__detail">{warehouse.address}</p>
           </div>
         </div>
         <div className="warehouse-item__info-container">
@@ -52,16 +52,18 @@ function WarehouseItem({ warehouse }) {
       <div className="warehouse-item__actions">
         <div className="warehouse-item__actions-container">
           <button aria-label="Delete item" className="warehouse-item__delete">
-            <img src={deleteicon} id={warehouse.id} />
+            <img
+              src={deleteicon}
+              id={warehouse.id}
+              onClick={handleOpenWarehouseModal}
+            />
           </button>
         </div>
         <div className="warehouse-item__actions-container">
           <button aria-label="Delete item" className="warehouse-item__delete">
             <img
               src={editIcon}
-              onClick={() =>
-                navigate(`/warehouses/edit/${warehouse.id}`)
-              }
+              onClick={() => navigate(`/warehouses/edit/${warehouse.id}`)}
             />
           </button>
         </div>
