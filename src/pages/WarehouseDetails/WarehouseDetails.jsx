@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import WarehouseInfo from '../../components/WarehouseInfo/WarehouseInfo';
 import './WarehouseDetails.scss';
+import WarehouseInventory from '../../components/WarehouseInventory/WarehouseInventory';
 
 function WarehouseDetails() {
     const { id } = useParams();
@@ -24,6 +25,7 @@ function WarehouseDetails() {
     return (
         <>
             <WarehouseInfo warehouse={warehouseData} />
+            <WarehouseInventory />
         </>
     );
 }

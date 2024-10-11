@@ -26,12 +26,8 @@
     &__main-container {
         display: flex;
         flex-direction: row;
-        gap: $pad-increment;
+        gap: $pad-increment*3;
         width: 100%;
-
-        // @include tablet {
-        //     gap: 0;
-        // }
 
         @include tablet {
             display: contents;
@@ -42,12 +38,7 @@
     &__info-container {
         display: flex;
         flex-direction: column;
-        flex: 1;
-
-        // @include tablet {
-        //     flex-direction: row;
-        //     align-items: center;
-        // }
+        width: 50%;
 
         @include tablet {
             display: contents;
