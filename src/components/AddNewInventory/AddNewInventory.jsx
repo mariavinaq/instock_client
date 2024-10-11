@@ -44,8 +44,6 @@ function AddNewInventory() {
       return;
     }
 
-    const newId = uuidv4();
-
     const newInventoryItem = {
       warehouse_id: Number(warehouse),
       item_name: itemName,
