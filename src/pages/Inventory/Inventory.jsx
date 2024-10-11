@@ -16,7 +16,7 @@ function Inventory() {
   };
 
   const handleCloseInventoryModal = () => {
-      setInventoryModalOpen(false);
+    setInventoryModalOpen(false);
   };
   const fetchInventories = async () => {
     try {
@@ -32,16 +32,19 @@ function Inventory() {
   }, []);
   return (
     <>
-    <InventoryModal 
-          isOpen={inventoryModalOpen}
-          onClose={handleCloseInventoryModal}
-          inventoryId={selectedInventory}
-          fetchData={fetchInventories}
-    />
-    <div className="inventory-page">
-      <InventoryHeader />
-      <InventoryList inventories={inventory} handleOpenInventoryModal={handleOpenInventoryModal} />
-    </div>
+      <InventoryModal
+        isOpen={inventoryModalOpen}
+        onClose={handleCloseInventoryModal}
+        inventoryId={selectedInventory}
+        fetchData={fetchInventories}
+      />
+      <div className="inventory-page">
+        <InventoryHeader />
+        <InventoryList
+          inventories={inventory}
+          handleOpenInventoryModal={handleOpenInventoryModal}
+        />
+      </div>
     </>
   );
 }

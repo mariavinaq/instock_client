@@ -12,6 +12,7 @@ import EditWarehouseItem from "./components/EditWarehouseItem/EditWarehouseItem"
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
 
 function App() {
   return (
@@ -27,8 +28,8 @@ function App() {
             <Route path="/warehouses/:id" element={<WarehouseDetails />}></Route>
             <Route path="/inventories" element={<Inventory />}></Route>
             <Route path="/inventories/add" element={<AddNewInventory />}></Route>
-            <Route path="/inventories/:id/edit" element={<EditInventoryItem />}></Route>
-            <Route path="/inventories/:id" element={<InventoryItemDetails />}></Route>
+            <Route path="/inventories/edit/:id/" element={<EditInventoryItem />}></Route>
+            <Route path="/inventories/:id" element={<InventoryDetailsPage />}></Route>
           </Routes>
         </ContentWrapper>
         <Footer />
