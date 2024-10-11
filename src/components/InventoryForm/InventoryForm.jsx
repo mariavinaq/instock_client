@@ -156,7 +156,7 @@ function InventoryForm ({ data, button, warehouseId }) {
                             ${error && !description ? "inventory-form__textarea--error" : ""}`
                         }
                     />
-                    <FormError errorState={error} field={description}>Item is required</FormError>
+                    <FormError errorState={error} field={description}>Description is required</FormError>
 
 
                     <label className='inventory-form__label' htmlFor='category'>Category</label>
@@ -176,7 +176,7 @@ function InventoryForm ({ data, button, warehouseId }) {
                         <option value="Gear">Gear</option>
                         <option value="Health">Health</option>
                     </select>
-                    <FormError errorState={error} field={category}>Item is required</FormError>
+                    <FormError errorState={error} field={category}>Category is required</FormError>
                 </div>
 
                 <div className='inventory-form__section inventory-form__section--2'>
