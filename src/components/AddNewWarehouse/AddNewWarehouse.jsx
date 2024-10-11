@@ -37,7 +37,9 @@ function AddNewWarehouse () {
             </div>
             <div className='addWarehouse__formWrapper'>
                <form onSubmit={postWarehouse} className='addwarehouse__form'>
-                <div className='addWarehouse__form-section addWarehouse__form-warehouse'>
+
+                <div className='addWarehouse__form-sections'>
+                   <div className='addWarehouse__form-section addWarehouse__form-warehouse'>
                     <h2 className='addWarehouse__form-details'>Warehouse Details</h2>
 
                     <label className='addWarehouse__form-label' htmlFor='warehouse_name'>Warehouse Name</label>
@@ -51,9 +53,9 @@ function AddNewWarehouse () {
 
                     <label className='addWarehouse__form-label' htmlFor='country'>Country</label>
                     <input className='addWarehouse__form-input' name='country' id='country' placeholder='Country'></input>
-                </div>
+                    </div>
 
-                <div className='addWarehouse__form-section addWarehouse__form-contactDetails'>
+                    <div className='addWarehouse__form-section addWarehouse__form-contactDetails'>
                     <h2 className='addWarehouse__form-details'>Contact Details</h2>
                     
                     <label className='addWarehouse__form-label' htmlFor='contact_name'>Contact Name</label>
@@ -67,11 +69,12 @@ function AddNewWarehouse () {
 
                     <label className='addWarehouse__form-label' htmlFor='contact_email'>Email</label>
                     <input className='addWarehouse__form-input' name='contact_email' id='contact_email' placeholder='Email'></input>
+                    </div> 
                 </div>
-
+                
                 <div className='addWarehouse__form-buttons'>
                     <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
-                    <button className='addWarehouse__form-button addWarehouse__form-save' type='submit'>Save</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-add' type='submit'>+ Add Warehouse</button>
                 </div>
                 </form> 
             </div>
