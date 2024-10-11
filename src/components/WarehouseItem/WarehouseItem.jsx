@@ -15,7 +15,7 @@ function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
           <div className="warehouse-item__name-container">
             <p className="warehouse-item__label-mobile">INVENTORY ITEM</p>
             <Link
-              to={`/inventories/${warehouse.id}`}
+              to={`/warehouses/${warehouse.id}`}
               className="warehouse-item__name-sub-container"
             >
               <p className="warehouse-item__name">{warehouse.warehouse_name}</p>
