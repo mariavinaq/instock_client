@@ -37,13 +37,6 @@ function AddNewWarehouse () {
         }
     };
 
-    const handleReset = () => {
-        const form = document.querySelector('.addwarehouse__form');
-        if (form) {
-          form.reset();
-        }
-      };
-
     return (
         <div className='addWarehouse'>
             <div className='addWarehouse__empty'></div>
@@ -92,7 +85,7 @@ function AddNewWarehouse () {
                 </div>
                 
                 <div className='addWarehouse__form-buttons'>
-                    <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={() => {navigate(-1)}}>Cancel</button>
                     <button className='addWarehouse__form-button addWarehouse__form-add' type='submit'>+ Add Warehouse</button>
                 </div>
                 </form> 
