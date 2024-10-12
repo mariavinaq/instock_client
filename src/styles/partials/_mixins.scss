@@ -96,6 +96,6 @@
 
 @mixin chevron-parent {
   &:hover :nth-last-child(1) {
-    transform: translateX(50%);
+    transform: translateX(0.4rem);
   }
 }
