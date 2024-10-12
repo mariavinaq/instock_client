@@ -9,6 +9,9 @@ function Inventory() {
   const [inventory, setInventory] = useState([]);
   const [inventoryModalOpen, setInventoryModalOpen] = useState(false);
   const [selectedInventory, setSelectedInventory] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState([]);
+
   const handleOpenInventoryModal = (event) => {
     const id = Number(event.target.id);
     setSelectedInventory(id);
@@ -30,6 +33,28 @@ function Inventory() {
   useEffect(() => {
     fetchInventories();
   }, []);
+
+  useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/inventories/match/${keyword}`
+        );
+
+        setResults(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const debounceFetch = setTimeout(() => {
+      if (keyword) {
+        fetchResults();
+      }
+    }, 300); // Adjust the debounce delay as needed
+
+    return () => clearTimeout(debounceFetch);
+  }, [keyword]);
   return (
     <>
       <InventoryModal
@@ -39,10 +64,12 @@ function Inventory() {
         fetchData={fetchInventories}
       />
       <div className="inventory-page">
-        <InventoryHeader />
+        <InventoryHeader keyword={keyword} setKeyword={setKeyword} />
         <InventoryList
+          results={results}
           inventories={inventory}
           handleOpenInventoryModal={handleOpenInventoryModal}
+          keyword={keyword}
         />
       </div>
     </>

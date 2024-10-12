@@ -1,7 +1,23 @@
 import "./InventoryList.scss";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import InventoryItem from "../InventoryItem/InventoryItem";
-function InventoryList({ inventories, handleOpenInventoryModal }) {
+import { useState, useEffect } from "react";
+
+function InventoryList({
+  inventories,
+  results,
+  keyword,
+  handleOpenInventoryModal,
+}) {
+  const [isSearch, setIsSearch] = useState(false);
+
+  useEffect(() => {
+    if (keyword) {
+      setIsSearch(true);
+    } else {
+      setIsSearch(false);
+    }
+  }, [keyword]);
   return (
     <div>
       <section className="inventory-list-section">
@@ -53,8 +69,12 @@ function InventoryList({ inventories, handleOpenInventoryModal }) {
           </div>
         </div>
         <ul className="inventory-list">
-          {inventories.map((item) => (
-            <InventoryItem key={item.id} inventory={item} handleOpenInventoryModal={handleOpenInventoryModal} />
+          {(isSearch ? results : inventories).map((item) => (
+            <InventoryItem
+              key={item.id}
+              inventory={item}
+              handleOpenInventoryModal={handleOpenInventoryModal}
+            />
           ))}
         </ul>
       </section>
