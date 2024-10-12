@@ -9,15 +9,37 @@ function InventoryList({
   keyword,
   handleOpenInventoryModal,
 }) {
-  const [isSearch, setIsSearch] = useState(false);
+  const [items, setItems] = useState([]);
+  const [order, setOrder] = useState("asc");
+  const [column, setColumn] = useState("");
+
+  useEffect(() => {
+    sortItems();
+  }, [order, column]);
 
   useEffect(() => {
     if (keyword) {
-      setIsSearch(true);
+      setItems(results);
     } else {
-      setIsSearch(false);
+      setItems(inventories);
     }
-  }, [keyword]);
+  }, [keyword, results, inventories]);
+
+  const sortItems = () => {
+    const sortedItems = [...items].sort((a, b) => {
+      if (order === "asc") {
+        return a[column] > b[column] ? 1 : -1;
+      } else {
+        return a[column] < b[column] ? 1 : -1;
+      }
+    });
+    setItems(sortedItems);
+  };
+
+  const handleSort = (col) => {
+    setColumn(col);
+    setOrder(order === "asc" ? "desc" : "asc");
+  };
   return (
     <div>
       <section className="inventory-list-section">
@@ -27,6 +49,7 @@ function InventoryList({
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("item_name")}
               className="inventory-list-section__label-img"
             />
           </div>
@@ -35,6 +58,7 @@ function InventoryList({
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("category")}
               className="inventory-list-section__label-img"
             />
           </div>
@@ -43,6 +67,7 @@ function InventoryList({
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("status")}
               className="inventory-list-section__label-img"
             />
           </div>
@@ -51,6 +76,7 @@ function InventoryList({
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("quantity")}
               className="inventory-list-section__label-img"
             />
           </div>
@@ -61,6 +87,7 @@ function InventoryList({
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("warehouse_name")}
               className="inventory-list-section__label-img"
             />
           </div>
@@ -69,7 +96,7 @@ function InventoryList({
           </div>
         </div>
         <ul className="inventory-list">
-          {(isSearch ? results : inventories).map((item) => (
+          {items.map((item) => (
             <InventoryItem
               key={item.id}
               inventory={item}
