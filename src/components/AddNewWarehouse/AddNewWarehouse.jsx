@@ -22,7 +22,7 @@ function AddNewWarehouse () {
 
        const response = await axios.post("http://localhost:8080/warehouses", newWarehouse)
 
-       form.reset();
+       if(response)event.target.reset();
     }
 
     const navigate = useNavigate();
