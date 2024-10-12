@@ -5,7 +5,6 @@ import axios from "axios";
 
 function EditWarehouseItem () {
 
-    
 
     return (
         <div className='editWarehouse'>
@@ -15,10 +14,10 @@ function EditWarehouseItem () {
                     <img className='editWarehouse__header-icon' src={arrowBack} alt='arrowBack'></img>    
                 </Link>
                 
-                <h1 className='editWarehouse__header-itle'>Add New Warehouse</h1>
+                <h1 className='editWarehouse__header-itle'>Edit Warehouse</h1>
             </div>
             <div className='editWarehouse__formWrapper'>
-               <form onSubmit={postWarehouse} className='editWarehouse__form'>
+               <form className='editWarehouse__form'>
 
                 <div className='editWarehouse__form-sections'>
                    <div className='editWarehouse__form-section editWarehouse__form-warehouse'>
@@ -55,8 +54,8 @@ function EditWarehouseItem () {
                 </div>
                 
                 <div className='editWarehouse__form-buttons'>
-                    <button className='editWarehouse__form-button editWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
-                    <button className='editWarehouse__form-button editWarehouse__form-add' type='submit'>+ Add Warehouse</button>
+                    <button className='editWarehouse__form-button editWarehouse__form-cancel' type="button">Cancel</button>
+                    <button className='editWarehouse__form-button editWarehouse__form-add' type='submit'>+ Edit Warehouse</button>
                 </div>
                 </form> 
             </div>
