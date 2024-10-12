@@ -1,6 +1,6 @@
 import './AddNewWarehouse.scss';
 import Header from '../../components/Header/Header';
-import arrowBack from '../../assets/Icons/arrow_back-24px.svg'
+import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -22,7 +22,7 @@ function AddNewWarehouse () {
 
        const response = await axios.post("http://localhost:8080/warehouses", newWarehouse)
 
-       if(response)event.tartget.reset();
+       if(response)event.target.reset();
     }
 
     const navigate = useNavigate();
@@ -37,19 +37,12 @@ function AddNewWarehouse () {
         }
     };
 
-    const handleReset = () => {
-        const form = document.querySelector('.addwarehouse__form');
-        if (form) {
-          form.reset();
-        }
-      };
-
     return (
         <div className='addWarehouse'>
             <div className='addWarehouse__empty'></div>
             <div className='addWarehouse__header'>
-                <Link to={"/"}>
-                    <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack for add new warehouse title'></img>    
+                <Link to={"/warehouses"}>
+                    <img className='addWarehouse__header-icon' src={arrowBack} alt='arrowBack'></img>    
                 </Link>
                 
                 <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
@@ -92,7 +85,7 @@ function AddNewWarehouse () {
                 </div>
                 
                 <div className='addWarehouse__form-buttons'>
-                    <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={handleReset}>Cancel</button>
+                    <button className='addWarehouse__form-button addWarehouse__form-cancel' type="button" onClick={() => {navigate(-1)}}>Cancel</button>
                     <button className='addWarehouse__form-button addWarehouse__form-add' type='submit'>+ Add Warehouse</button>
                 </div>
                 </form> 
