@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 17rem;
+    height: 19.5rem;
     @include labels-links-buttons;
     @include tablet {
         flex-direction: row;

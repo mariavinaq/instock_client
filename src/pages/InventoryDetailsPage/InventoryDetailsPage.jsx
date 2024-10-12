@@ -46,7 +46,6 @@ function InventoryDetailsPage () {
                     </button>
                 </Link>
             </div>
-            <hr />
             <InventoryItemDetails details={inventoryDetails} />
         </section>
         </>
