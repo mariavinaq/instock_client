@@ -38,6 +38,7 @@
 
     &__form {
         display: flex;
+        flex-direction: column;
         @include tablet {
             &-sections {
                 display: flex;
@@ -70,6 +71,7 @@
         }
         &-label {
             font-size: 1.3rem;
+            font-weight: 600;
             margin-top: 2rem;
         }
         &-input {
