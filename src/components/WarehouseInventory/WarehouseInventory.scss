@@ -30,6 +30,7 @@
     }
 
     &__label {
+        @include table-header;
         @include tablet {
             &-container {
                 display: flex;
