@@ -1,8 +1,45 @@
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import "./WarehouseList.scss";
+import { useEffect, useState } from "react";
+import axios from "axios";
+function WarehouseList({
+  warehouses,
+  results,
+  handleOpenWarehouseModal,
+  keyword,
+}) {
+  const [items, setItems] = useState([]);
+  const [order, setOrder] = useState("asc");
+  const [column, setColumn] = useState("");
 
-function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
+  useEffect(() => {
+    sortItems();
+  }, [order, column]);
+
+  useEffect(() => {
+    if (keyword) {
+      setItems(results);
+    } else {
+      setItems(warehouses);
+    }
+  }, [keyword, results, warehouses]);
+
+  const sortItems = () => {
+    const sortedItems = [...items].sort((a, b) => {
+      if (order === "asc") {
+        return a[column] > b[column] ? 1 : -1;
+      } else {
+        return a[column] < b[column] ? 1 : -1;
+      }
+    });
+    setItems(sortedItems);
+  };
+
+  const handleSort = (col) => {
+    setColumn(col);
+    setOrder(order === "asc" ? "desc" : "asc");
+  };
   return (
     <>
       <section className="warehouse-list-section">
@@ -12,6 +49,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("warehouse_name")}
               className="warehouse-list-section__label-img"
             />
           </div>
@@ -20,6 +58,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("address")}
               className="warehouse-list-section__label-img"
             />
           </div>
@@ -29,6 +68,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("contact_name")}
               className="warehouse-list-section__label-img"
             />
           </div>
@@ -39,6 +79,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
             <img
               src={SortIcon}
               alt="Sort"
+              onClick={() => handleSort("contact_email" || "contact_phone")}
               className="warehouse-list-section__label-img"
             />
           </div>
@@ -47,7 +88,7 @@ function WarehouseList({ warehouses, handleOpenWarehouseModal }) {
           </div>
         </div>
         <ul className="warehouse-list">
-          {warehouses.map((item) => (
+          {items.map((item) => (
             <WarehouseItem
               key={item.id}
               warehouse={item}
