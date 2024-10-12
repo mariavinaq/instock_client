@@ -112,13 +112,6 @@ function EditWarehouseItem() {
     return <div>Error occurred. Please try again.</div>;
   }
 
-  const handleReset = () => {
-    const form = document.querySelector('.addwarehouse__form');
-    if (form) {
-      form.reset();
-    }
-  };
-
   return (
     <div className="editWarehouse">
       <div className="editWarehouse__empty"></div>
@@ -259,7 +252,7 @@ function EditWarehouseItem() {
           <div className="editWarehouse__form-buttons">
             <button
               className="editWarehouse__form-button editWarehouse__form-cancel"
-              type="button" onClick={handleReset}
+              type="button" onClick={() => {navigate(-1)}}
             >
               Cancel
             </button>
