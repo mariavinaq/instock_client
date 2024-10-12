@@ -32,7 +32,7 @@ const DeleteModal = ({ warehouseName, closeModal }) => {
           >
             cancel
           </button>
-          <button>delete</button>
+          <button className="modal__delete-btn">delete</button>
         </div>
       </div>
     </div>

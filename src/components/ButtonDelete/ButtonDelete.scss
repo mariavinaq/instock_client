@@ -9,10 +9,10 @@
     width: 100%;
     height: 36px;
     font-weight: 600;
+    color:#ffff !important;
     border-radius: 20px;
     text-align: center;
     @include body-small;
-    color:#ffff;
     @include tablet {
       width: unset;
       padding: 0 1rem;
