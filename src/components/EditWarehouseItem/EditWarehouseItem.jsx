@@ -4,6 +4,9 @@ import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function EditWarehouseItem () {
+
+    
+
     return (
         <div className='editWarehouse'>
             <div className='editWarehouse__empty'></div>
