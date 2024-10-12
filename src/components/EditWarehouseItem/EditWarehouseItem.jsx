@@ -45,18 +45,17 @@ function EditWarehouseItem() {
     fetchWarehouseData();
   }, [id]);
 
-  const handleChangeWarehouseName = (event) =>
-    setWarehouseName(event.target.value);
-  const handleChangeAddress = (event) => setAddress(event.target.value);
-  const handleChangeCity = (event) => setCity(event.target.value);
-  const handleChangeCountry = (event) => setCountry(event.target.value);
-  const handleChangeContactName = (event) => setContactName(event.target.value);
+  const handleChangeWarehouseName = (event) => {setWarehouseName(event.target.value)};
+  const handleChangeAddress = (event) => {setAddress(event.target.value)};
+  const handleChangeCity = (event) => {setCity(event.target.value)};
+  const handleChangeCountry = (event) => {setCountry(event.target.value)};
+  const handleChangeContactName = (event) => {setContactName(event.target.value)};
   const handleChangeContactPosition = (event) =>
-    setContactPosition(event.target.value);
+    {setContactPosition(event.target.value)};
   const handleChangeContactPhone = (event) =>
-    setContactPhone(event.target.value);
+    {setContactPhone(event.target.value)};
   const handleChangeContactEmail = (event) =>
-    setContactEmail(event.target.value);
+    {setContactEmail(event.target.value)};
 
   const validateForm = () => {
     return (
@@ -113,6 +112,13 @@ function EditWarehouseItem() {
     return <div>Error occurred. Please try again.</div>;
   }
 
+  const handleReset = () => {
+    const form = document.querySelector('.addwarehouse__form');
+    if (form) {
+      form.reset();
+    }
+  };
+
   return (
     <div className="editWarehouse">
       <div className="editWarehouse__empty"></div>
@@ -128,7 +134,7 @@ function EditWarehouseItem() {
         <h1 className="editWarehouse__header-itle">Edit Warehouse</h1>
       </div>
       <div className="editWarehouse__formWrapper">
-        <form className="editWarehouse__form" onClick={handleSubmit}>
+        <form className="editWarehouse__form" onSubmit={handleSubmit}>
           <div className="editWarehouse__form-sections">
             <div className="editWarehouse__form-section editWarehouse__form-warehouse">
               <h2 className="editWarehouse__form-details">Warehouse Details</h2>
@@ -145,6 +151,7 @@ function EditWarehouseItem() {
                 id="warehouse_name"
                 placeholder="Warehouse Name"
                 onChange={handleChangeWarehouseName}
+                value={warehouseName}
               ></input>
 
               <label className="editWarehouse__form-label" htmlFor="address">
@@ -155,6 +162,8 @@ function EditWarehouseItem() {
                 name="address"
                 id="address"
                 placeholder="Street Name"
+                onChange={handleChangeAddress}
+                value={address}
               ></input>
 
               <label className="editWarehouse__form-label" htmlFor="city">
@@ -165,6 +174,8 @@ function EditWarehouseItem() {
                 name="city"
                 id="city"
                 placeholder="City"
+                onChange={handleChangeCity}
+                value={city}
               ></input>
 
               <label className="editWarehouse__form-label" htmlFor="country">
@@ -174,7 +185,9 @@ function EditWarehouseItem() {
                 className="editWarehouse__form-input"
                 name="country"
                 id="country"
+                onChange={handleChangeCountry}
                 placeholder="Country"
+                value={country}
               ></input>
             </div>
 
@@ -192,6 +205,8 @@ function EditWarehouseItem() {
                 name="contact_name"
                 id="contact_name"
                 placeholder="Contact Name"
+                onChange={handleChangeContactName}
+                value={contactName}
               ></input>
 
               <label
@@ -205,6 +220,8 @@ function EditWarehouseItem() {
                 name="contact_position"
                 id="contact_position"
                 placeholder="Position"
+                onChange={handleChangeContactPosition}
+                value={contactPosition}
               ></input>
 
               <label
@@ -218,6 +235,8 @@ function EditWarehouseItem() {
                 name="contact_phone"
                 id="contact_phone"
                 placeholder="Phone Number"
+                onChange={handleChangeContactPhone}
+                value={contactPhone}
               ></input>
 
               <label
@@ -231,6 +250,8 @@ function EditWarehouseItem() {
                 name="contact_email"
                 id="contact_email"
                 placeholder="Email"
+                onChange={handleChangeContactEmail}
+                value={contactEmail}
               ></input>
             </div>
           </div>
@@ -238,7 +259,7 @@ function EditWarehouseItem() {
           <div className="editWarehouse__form-buttons">
             <button
               className="editWarehouse__form-button editWarehouse__form-cancel"
-              type="button"
+              type="button" onClick={handleReset}
             >
               Cancel
             </button>
