@@ -22,20 +22,20 @@ function AddNewWarehouse () {
 
        const response = await axios.post("http://localhost:8080/warehouses", newWarehouse)
 
-       form.reset();
+       if(response)event.tartget.reset();
     }
 
     const navigate = useNavigate();
     
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //     await postWarehouse(event);
-    //     navigate(-1); // Go back one page in the history
-    //     } catch (error) {
-    //     console.error('Error submitting form:', error);
-    //     }
-    // };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+        await postWarehouse(event);
+        navigate("/warehouses"); // Go back one page in the history
+        } catch (error) {
+        console.error('Error submitting form:', error);
+        }
+    };
 
     const handleReset = () => {
         const form = document.querySelector('.addwarehouse__form');
@@ -55,7 +55,7 @@ function AddNewWarehouse () {
                 <h1 className='addWarehouse__header-itle'>Add New Warehouse</h1>
             </div>
             <div className='addWarehouse__formWrapper'>
-               <form onSubmit={postWarehouse} className='addwarehouse__form'>
+               <form onSubmit={handleSubmit} className='addwarehouse__form'>
 
                 <div className='addWarehouse__form-sections'>
                    <div className='addWarehouse__form-section addWarehouse__form-warehouse'>
