@@ -15,7 +15,6 @@
 @mixin page-header {
   font-size: 2.8rem;
   line-height: 3.6rem;
-  color: $color-is-black;
 
   @include tablet {
     font-size: 3.2rem;
@@ -26,7 +25,6 @@
 @mixin subheader {
   font-size: 2rem;
   line-height: 2.8rem;
-  color: $color-is-black;
 
   @include tablet {
     font-size: 2.4rem;
@@ -60,7 +58,6 @@
 @mixin body-large {
   font-size: 1.5rem;
   line-height: 2.6rem;
-  color: $color-is-black;
 
   @include tablet {
     font-size: 1.6rem;
@@ -71,7 +68,6 @@
 @mixin body-medium {
   font-size: 1.3rem;
   line-height: 2rem;
-  color: $color-is-black;
 
   @include tablet {
     font-size: 1.4rem;
@@ -82,7 +78,6 @@
 @mixin body-small {
   font-size: 1.1rem;
   line-height: 1.6rem;
-  color: $color-is-black;
 
   @include tablet {
     font-size: 1.2rem;
