@@ -53,7 +53,7 @@ function Warehouse() {
       if (keyword) {
         fetchResults();
       }
-    }, 300); // Adjust the debounce delay as needed
+    }, 300);
 
     return () => clearTimeout(debounceFetch);
   }, [keyword]);
