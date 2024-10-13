@@ -91,7 +91,7 @@ function InventoryList({
               className="inventory-list-section__label-img"
             />
           </div>
-          <div className="inventory-list-section__label-container">
+          <div className="inventory-list-section__label-container inventory-list-section__label-container-actions">
             <div className="inventory-list-section__label">ACTIONS</div>
           </div>
         </div>
