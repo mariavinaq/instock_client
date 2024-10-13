@@ -25,7 +25,6 @@ function Warehouse() {
   const fetchWarehouses = async () => {
     try {
       const response = await axios.get(`http://localhost:8080/warehouses`);
-      console.log("Warehouses data: " + response.data);
       setWarehouseData(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
