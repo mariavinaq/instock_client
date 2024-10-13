@@ -3,15 +3,20 @@
 @use '../../styles/partials/typography.scss' as *;
 @use '../../styles/partials/variables.scss' as *;
 
-.warehouse-item {
+.warehouse {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     border-bottom: $color-cloud 1px solid;
     color: $color-is-black;
-    padding:24px;
+    padding: 24px;
+    gap: 1.6rem;
+    @include body-medium;
 
     @include tablet {
+      gap: 0;
+      justify-content: space-between;
+      align-items: center;
       padding: 8px 32px;
       flex-direction: row;
     }
@@ -19,7 +24,12 @@
     &__main-container{
         display: flex;
         flex-direction: row;
+        gap: 1.6rem;
         width: 100%;
+
+        @include tablet {
+          display: contents;
+        }
     }
   
     &__details-container,
@@ -27,8 +37,10 @@
       display: flex;
       flex-direction: column;
       flex:4.5;
+      gap: 1.6rem;
 
       @include tablet {
+        display: contents;
         flex-direction: row;
         align-items: center;
       }
@@ -47,15 +59,39 @@
         }
     }
 
-    &__name-container {
-      @include tablet {
-        flex: 4.5;
-      }
-    }
-
     &__detail-container{
       @include tablet {
-        flex: 4.5;
+        padding-right: 1.75rem;
+      }
+
+      @include desktop {
+        padding-right: 3rem;
+      }
+
+      &--warehouse {
+        @include tablet {
+          flex: 0 0 20%;
+        }
+      }
+
+      &--address {
+        @include tablet {
+          flex: 1 0 18%;
+          padding-right: 3rem;
+        }
+      }
+
+      &--contact-name {
+        @include tablet {
+          flex: 0 0 20%;
+        }
+      }
+
+      &--contact-info {
+        @include tablet {
+          flex: 0 0 27%;
+          max-width: 20rem;
+        }
       }
     }
 
@@ -70,7 +106,7 @@
 
     &__name{
       margin-top: 0;
-      margin-bottom:16px;
+      margin-bottom: 0;
       color: $color-is-indigo;
       font-weight: 600;
 
@@ -78,22 +114,6 @@
         margin-bottom:0px;
       }
     }
-
-    &__detail {
-      margin-bottom: 16px;
-      margin-top:0;
-      @include body-medium;
-      @include tablet {
-        margin-right:1rem;
-        margin-bottom: 0;
-        flex: 1;
-
-        @include desktop {
-          width: auto; 
-        }
-      }
-    }
-
    
     &__warehouse {
       margin-bottom: 16px;
@@ -114,14 +134,19 @@
       @include chevron-transition;
     }
   
-    &__actions {
+    &__actions-container {
       display: flex;
       justify-content: space-between;
+
+      @include tablet {
+        justify-content: end;
+        gap: 1.5rem;
+        flex: 0 0 8%;
+      }
   
       button {
         background: none;
         border: none;
-        padding: 4px;
         cursor: pointer;
   
         svg {

@@ -9,65 +9,59 @@ function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
   const navigate = useNavigate();
 
   return (
-    <div className="warehouse-item">
-      <div className="warehouse-item__main-container">
-        <div className="warehouse-item__details-container">
-          <div className="warehouse-item__name-container">
-            <p className="warehouse-item__label-mobile">WAREHOUSE</p>
+    <div className="warehouse">
+      <div className="warehouse__main-container">
+        <div className="warehouse__details-container">
+          <div className="warehouse__detail-container warehouse__detail-container--warehouse">
+            <p className="warehouse__label-mobile">WAREHOUSE</p>
             <Link
               to={`/warehouses/${warehouse.id}`}
-              className="warehouse-item__name-sub-container"
+              className="warehouse__name-sub-container"
             >
-              <p className="warehouse-item__name">{warehouse.warehouse_name}</p>
+              <p className="warehouse__name">{warehouse.warehouse_name}</p>
               <img
                 src={ChevronRightIcon}
                 alt="More details"
-                className="warehouse-item__chevron"
+                className="warehouse__chevron"
               />
             </Link>
           </div>
-          <div className="warehouse-item__detail-container">
-            <p className="warehouse-item__label-mobile">ADDRESS</p>
-            <p className="warehouse-item__detail">{warehouse.address}</p>
+          <div className="warehouse__detail-container warehouse__detail-container--address">
+            <p className="warehouse__label-mobile">ADDRESS</p>
+            <p className="warehouse__detail">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
           </div>
         </div>
-        <div className="warehouse-item__info-container">
-          <div className="warehouse-item__detail-container">
-            <p className="warehouse-item__label-mobile">CONTACT NAME</p>
-            <p className="warehouse-item__detail">{warehouse.contact_name}</p>
+        <div className="warehouse__info-container">
+          <div className="warehouse__detail-container warehouse__detail-container--contact-name">
+            <p className="warehouse__label-mobile">CONTACT NAME</p>
+            <p className="warehouse__detail">{warehouse.contact_name}</p>
           </div>
-          <div className="warehouse-item__info-container">
-            <div className="warehouse-item__detail-container">
-              <p className="warehouse-item__label-mobile">CONTACT INFO</p>
-              <p className="warehouse-item__detail">
+            <div className="warehouse__detail-container warehouse__detail-container--contact-info">
+              <p className="warehouse__label-mobile">CONTACT INFO</p>
+              <p className="warehouse__detail">
                 {warehouse.contact_phone}
               </p>
-              <p className="warehouse-item__detail">
+              <p className="warehouse__detail">
                 {warehouse.contact_email}
               </p>
             </div>
-          </div>
         </div>
       </div>
-      <div className="warehouse-item__actions">
-        <div className="warehouse-item__actions-container">
-          <button aria-label="Delete item" className="warehouse-item__delete">
+        <div className="warehouse__actions-container">
+          <button aria-label="Delete item" className="warehouse__delete">
             <img
               src={deleteicon}
               id={warehouse.id}
               onClick={handleOpenWarehouseModal}
             />
           </button>
-        </div>
-        <div className="warehouse-item__actions-container">
-          <button aria-label="Delete item" className="warehouse-item__delete">
+          <button aria-label="Delete item" className="warehouse__delete">
             <img
               src={editIcon}
               onClick={() => navigate(`/warehouses/edit/${warehouse.id}`)}
             />
           </button>
         </div>
-      </div>
     </div>
   );
 }

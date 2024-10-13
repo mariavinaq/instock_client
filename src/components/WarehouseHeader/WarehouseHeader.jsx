@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function WarehouseHeader({ keyword, setKeyword }) {
   return (
     <div className="warehouse-header">
-      <h1 className="warehouse-header__title">Warehouse</h1>
+      <h1 className="warehouse-header__title">Warehouses</h1>
       <div className="warehouse-header__controls">
         <input
           type="text"

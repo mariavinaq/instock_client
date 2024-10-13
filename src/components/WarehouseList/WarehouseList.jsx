@@ -83,7 +83,7 @@ function WarehouseList({
               className="warehouse-list-section__label-img"
             />
           </div>
-          <div className="warehouse-list-section__label-container">
+          <div className="warehouse-list-section__label-container warehouse-list-section__label-container-action">
             <div className="warehouse-list-section__label">ACTIONS</div>
           </div>
         </div>

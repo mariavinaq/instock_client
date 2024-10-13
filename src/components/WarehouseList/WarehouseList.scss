@@ -23,33 +23,49 @@
         padding:4px 32px;
         height:40px;
         }
-        // @include desktop {
-        //     justify-content:flex-s;
-        // }
     }
 	&__label {
-		@include tablet {
 			&-container {
+        @include tablet {
 				display: flex;
 				flex-direction: row;
 				align-items: center;
-				@include desktop {
-					&-warehouse {
-						flex: 1;
-					}
-					&-address {
-                        flex: 1;
-					}
-					&-name{
-                        flex: 1 ;
-					}
-					&-info {
-                        flex: 1 2rem ;
-					}
-					
-				}
+        padding-right: 1.75rem;
+        }
+  
+        @include desktop {
+          padding-right: 3rem;
+        }
+
+        &-warehouse {
+          @include tablet {
+            flex: 0 0 20%;
+          }
+        }
+        &-address {
+          @include tablet {
+            flex: 1 0 18%;
+            padding-right: 3rem;
+          }
+        }
+        &-name{
+          @include tablet {
+            flex: 0 0 20%;
+          }
+        }
+        &-info {
+          @include tablet {
+            flex: 0 0 27%;
+            max-width: 20rem;
+          }
+        }
+        &-action {
+          @include tablet {
+            justify-content: end;
+            flex: 0 0 8%;
+          }
+        }
 			}
-		}
 	}
 }
 
