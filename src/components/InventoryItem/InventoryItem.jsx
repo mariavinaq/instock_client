@@ -53,7 +53,6 @@ function InventoryItem({ inventory, handleOpenInventoryModal }) {
         </div>
       </div>
       <div className="inventory-item__actions">
-        <div className="inventory-item__actions-container">
           <button className="inventory-item__delete">
             <img
               src={deleteicon}
@@ -61,15 +60,12 @@ function InventoryItem({ inventory, handleOpenInventoryModal }) {
               onClick={handleOpenInventoryModal}
             />
           </button>
-        </div>
-        <div className="inventory-item__actions-container">
           <button className="inventory-item__delete">
             <img
               src={editIcon}
               onClick={() => navigate(`/inventories/edit/${inventory.id}`)}
             />
           </button>
-        </div>
       </div>
     </div>
   );
