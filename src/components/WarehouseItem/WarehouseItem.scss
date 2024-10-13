@@ -12,6 +12,11 @@
     gap: 1.6rem;
     @include body-medium;
 
+    &:hover {
+      background-color: #2E66E512;
+      ;
+    }
+
     @include tablet {
       gap: 0;
       justify-content: space-between;

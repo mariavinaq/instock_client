@@ -10,6 +10,10 @@
     color: $color-is-black;
     padding:24px;
 
+    &:hover {
+      background-color: #2E66E512;
+    }
+
     @include tablet {
       justify-content: space-between;
       padding: 8px 32px;
