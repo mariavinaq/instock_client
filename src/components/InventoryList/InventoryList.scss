@@ -22,41 +22,57 @@
         align-items: center;
         background-color: rgba($color-lightgrey, 70%);
         color: $color-slate;
-        
         padding:4px 32px;
         height:40px;
-        }
-        @include desktop {
-            justify-content: unset;
         }
     }
 
 	&__label {
-		@include tablet {
-			&-container {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
+    &-container {
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 1.75rem;
+      }
 
-				@include desktop {
-					&-inventory {
-						width: 245.3px;
-					}
-					&-category {
-						width: 205px;
-					}
-					&-status {
-						width: 170px;
-					}
-					&-quantity {
-						width: 89px;
-					}
-					&-warehouse {
-						width: 180px;
-					}
-				}
-			}
-		}
+      @include desktop {
+        justify-content: unset;
+      }
+
+      &-inventory {
+        @include tablet {
+          flex: 0 0 23%;
+        }
+      }
+      &-category {
+        @include tablet {
+          flex: 0 0 17%;
+        }
+      }
+      &-status {
+        @include tablet {
+          flex: 0 0 19%;
+        }
+      }
+      &-quantity {
+        @include tablet {
+          flex: 0 0 10%;
+        }
+      }
+      &-warehouse {
+        @include tablet {
+          flex: 1 0 21%;
+        }
+      }
+      &-actions {
+        @include tablet {
+          justify-content: end;
+          flex: 0 0 7%;
+          padding-right: 0;
+        }
+      }
+    }
 	}
 }
 

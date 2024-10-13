@@ -33,7 +33,7 @@
         }
   
         @include desktop {
-          padding-right: 3rem;
+          justify-content: unset;
         }
 
         &-warehouse {
