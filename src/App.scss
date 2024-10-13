@@ -1,18 +1,4 @@
-// @use "./styles/partials/variables.scss" as *;
-// @use "./styles/partials/mixins.scss" as *;
-
-// body {
-//   background: linear-gradient(
-//     rgba($color-graphite, 1) 20rem,
-//     rgba($color-lightgrey, 1) 20rem
-//   );
-//   height: 100vh;
-//   margin: 0 2rem;
-
-//   @include tablet {
-//     background: linear-gradient(
-//       rgba($color-graphite, 1) 25rem,
-//       rgba($color-lightgrey, 1) 25rem
-//     );
-//   }
-// }
+@use './styles/partials/global.scss' as *;
+@use './styles/partials/mixins.scss' as *;
+@use './styles/partials/typography.scss' as *;
+@use './styles/partials/variables.scss' as *;
