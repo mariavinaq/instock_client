@@ -80,6 +80,7 @@
   &-img {
     @include tablet {
       background: none;
+      margin-left: 0.35rem;
       padding: 0;
       vertical-align: middle; 
       width: 1.6rem;
