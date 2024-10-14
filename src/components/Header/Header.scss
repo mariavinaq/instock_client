@@ -3,7 +3,7 @@
 @use '../../styles/partials/variables.scss' as *;
 
 .header {
-    background-color: #232940;
+    background-color: $color-graphite;
     padding: 2.4rem;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     }
     &__nav {
         display: flex;
-        color: #BDC5D5;
+        color: $color-cloud;
         width: 100%;
         @include tablet {
             justify-content: flex-end;
@@ -57,7 +57,7 @@
 }
 
 .active {
-    background-color: #13182C;
+    background-color: $color-is-black;
     color: #ffffff;
     height: 3.6rem;
     width: 100%;

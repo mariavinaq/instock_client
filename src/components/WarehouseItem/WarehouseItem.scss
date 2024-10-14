@@ -8,7 +8,7 @@
     justify-content: flex-start;
     border-bottom: $color-cloud 1px solid;
     color: $color-is-black;
-    padding: 24px;
+    padding: 2.4rem;
     gap: 1.6rem;
     @include body-medium;
 
@@ -21,7 +21,7 @@
       gap: 0;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 32px;
+      padding: 0.8rem 3.2rem;
       flex-direction: row;
     }
 
@@ -52,7 +52,7 @@
 
     &__label-mobile {
         margin:0;
-        margin-bottom: 4px;
+        margin-bottom: 0.4rem;
         color: $color-slate;
         font-weight: 600;
         @include body-small;
@@ -115,12 +115,12 @@
       font-weight: 600;
 
       @include tablet {
-        margin-bottom:0px;
+        margin-bottom:0;
       }
     }
    
     &__warehouse {
-      margin-bottom: 16px;
+      margin-bottom: 1.6rem;
       margin-top:0;
       @include body-medium;
       @include tablet {
@@ -134,7 +134,7 @@
     }
 
     &__chevron{
-      height: 20px;
+      height: 2rem;
       @include chevron-transition;
     }
   
@@ -154,8 +154,8 @@
         cursor: pointer;
   
         svg {
-          width: 24px;
-          height: 24px;
+          width: 2.4rem;
+          height: 2.4rem;
         }
       }
 

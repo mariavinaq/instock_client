@@ -4,7 +4,6 @@ import axios from "axios";
 import WarehouseInfo from "../../components/WarehouseInfo/WarehouseInfo";
 import WarehouseInventory from "../../components/WarehouseInventory/WarehouseInventory";
 import InventoryModal from "../../components/InventoryModal/InventoryModal";
-import "./WarehouseDetails.scss";
 
 function WarehouseDetails() {
   const { id } = useParams();

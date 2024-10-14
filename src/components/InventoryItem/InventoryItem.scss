@@ -8,7 +8,7 @@
     justify-content: center;
     border-bottom: $color-cloud 1px solid;
     color: $color-is-black;
-    padding:24px;
+    padding: 2.4rem;
 
     &:hover {
       background-color: #2E66E512;
@@ -16,7 +16,7 @@
 
     @include tablet {
       justify-content: space-between;
-      padding: 8px 32px;
+      padding: 0.8rem 3.2rem;
       flex-direction: row;
       align-items: center;
     }
@@ -46,7 +46,7 @@
 
     &__label-mobile {
         margin:0;
-        margin-bottom: 4px;
+        margin-bottom: 0.4rem;
         color: $color-slate;
         font-weight: 600;
         @include body-small;
@@ -80,21 +80,21 @@
 
     &__name{
       margin-top: 0;
-      margin-bottom:16px;
+      margin-bottom: 1.6rem;
       color: $color-is-indigo;
       font-weight: 600;
 
       @include tablet {
-        margin-bottom:0px;
+        margin-bottom: 0;
       }
     }
 
     &__category {
-      margin-bottom: 16px;
+      margin-bottom: 1.6rem;
       margin-top:0;
       @include body-medium;
       @include tablet {
-        margin-right:1rem;
+        margin-right: 1rem;
         margin-bottom: 0;
         flex: 1;
 
@@ -107,7 +107,7 @@
     &__status,
     &__quantity,
     &__warehouse {
-      margin-bottom: 16px;
+      margin-bottom: 1.6rem;
       margin-top:0;
       @include body-medium;
       @include tablet {
@@ -132,27 +132,27 @@
     }
 
     &__chevron{
-      height: 20px;
+      height: 2rem;
       @include chevron-transition;
     }
   
     &__status {
-      border-radius: 20px; 
+      border-radius: 2rem; 
       display: inline-block; 
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
       white-space: nowrap;
       cursor: pointer;
-      padding: 4px 8px; 
-      line-height: 20px;
-      font-size:11px;
+      padding: 0.4rem 0.8rem; 
+      line-height: 2rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 1.2rem;
 
       @include tablet {
-        line-height: 26px; 
-        margin: 4px;
+        line-height: 2.6rem; 
+        margin: 0.4rem;
       }
 
       &.in-stock {
@@ -183,8 +183,8 @@
         cursor: pointer;
   
         svg {
-          width: 24px;
-          height: 24px;
+          width: 2.4rem;
+          height: 2.4rem;
         }
       }
 

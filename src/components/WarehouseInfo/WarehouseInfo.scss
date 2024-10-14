@@ -80,7 +80,7 @@
     &__address {
         @include tablet {
             width: 38%;
-            border-right: 0.1rem solid $color-cloud;
+            border-right: 1px solid $color-cloud;
         }
 
         @include desktop {
