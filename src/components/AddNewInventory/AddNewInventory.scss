@@ -18,6 +18,7 @@
   padding: 1rem;
   width: 100%;
   height: 3.6rem;
+  padding-left:1.5rem;
 
   &::placeholder {
     color: $color-slate;
@@ -30,6 +31,7 @@
 
   &--description {
     height: 12rem;
+    resize: none;
   }
 }
 
@@ -73,10 +75,9 @@
     width: 100%;
 
     select {
+      font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
       appearance: none;
       width: 100%;
-      padding: 1rem;
-      padding-right: 4rem;
       border: 1px solid $color-cloud;
       border-radius: 2rem;
       color: $color-slate;
@@ -84,6 +85,7 @@
       background: url("../../assets/Icons/arrow_drop_down-24px.svg") no-repeat
         right 1rem center;
       background-size: 2rem;
+      padding-left:1.5rem;
 
       &:focus {
         outline: none;
