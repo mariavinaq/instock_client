@@ -11,6 +11,10 @@
     padding: 2.4rem;
     gap: 1.6rem;
     @include body-medium;
+    
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
 
     &:hover {
       background-color: #2E66E512;
@@ -136,6 +140,10 @@
     &__chevron{
       height: 2rem;
       @include chevron-transition;
+
+      @include tablet {
+        margin-left: 0.5rem;
+      }
     }
   
     &__actions-container {

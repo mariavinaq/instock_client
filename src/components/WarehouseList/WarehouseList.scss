@@ -62,6 +62,7 @@
           @include tablet {
             justify-content: end;
             flex: 0 0 8%;
+            padding-right: 0;
           }
         }
 			}
@@ -73,6 +74,7 @@
     @include tablet {
       background: none;
       padding: 0;
+      margin-left: 0.35rem;
       vertical-align: middle; 
       width: 1.6rem;
       height: 1.6rem;
