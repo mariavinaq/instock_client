@@ -42,15 +42,17 @@
 
     &__subheader {
         color: $color-is-black;
+        margin-top: 1.75rem;
         @include subheader;
     }
 
     &__label {
         height: 3.6rem;
-        display: block;
+        display: flex;
+        align-items: end;
         color: $color-is-black;
         font-weight: 600;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.5rem;
         margin-top: 1rem;
         @include labels-links-buttons;
         @include tablet {
@@ -63,9 +65,9 @@
         height: 3.6rem;
         width: 100%;
         box-sizing: border-box;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
         border: 0.1rem solid $color-cloud;
-        border-radius: 1.25rem;
+        border-radius: 2rem;
         position: relative;
 
         @include tablet {
@@ -88,26 +90,26 @@
         }
 
         &--select {
+            height: auto;
             appearance: none;
             background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
             background-repeat: no-repeat;
             background-position: right center;
+            font-family: inherit;
             @include body-medium;
         }
     }
 
     &__textarea {
         width: 100%;
-        height: 3.6rem;
+        height: 12rem;
         box-sizing: border-box;
-        padding: 0.5rem 1rem;
+        padding: 1rem 1.5rem;
         border: 0.0625rem solid $color-cloud;
-        border-radius: 1.25rem;
+        border-radius: 2rem;
         position: relative;
+        resize: none;
         @include body-medium;
-        @include tablet {
-            height: 3.8rem;
-        }
 
         &::placeholder {
             color: $color-slate;
@@ -140,7 +142,6 @@
     &__radio-container {
         display: flex;
         width: 100%;
-        justify-content: space-between;
 
         @include tablet {
             justify-content: flex-start;
@@ -148,12 +149,22 @@
         }
     }
 
+    &__radio-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: 50%;
+    }
+
     &__buttons {
+        display: flex;
+        gap: 2rem;
         background-color: $color-lightgrey;
         box-sizing: border-box;
         display: flex;
         width: 100%;
         height: 5.7rem;
+        padding: 4rem 3rem;
         justify-content: space-evenly;
         align-items: center;
 
@@ -164,7 +175,7 @@
     }
 
     &__button-wrapper {
-        width: 8rem;
+        width: 100%;
         height: 3.6rem;
 
         @include tablet {
@@ -173,4 +184,9 @@
             margin-left: 1rem;
         }
     }
+}
+
+#in-stock, #out-of-stock {
+    margin: 0 0.5rem;
+    padding: 0;
 }
