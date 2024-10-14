@@ -41,6 +41,9 @@
         color: $color-is-black;
         background-color: $color-white;
         border: none;
+        :hover{
+            cursor: pointer;
+          }
     }
   
     &__buttons {
@@ -60,6 +63,9 @@
   
     &__cancel {
       width: 45%;
+      :hover{
+        cursor: pointer;
+      }
   
       @include tablet {
         width: unset;
@@ -68,7 +74,9 @@
   
     &__submit {
       width: 45%;
-  
+      :hover{
+        cursor: pointer;
+      }
       @include tablet {
         width: unset;
       }
