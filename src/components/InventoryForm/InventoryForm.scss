@@ -7,7 +7,7 @@
         margin: 1rem;
         display: flex;
         flex-direction: column;
-        background-color: #FFFFFF;
+        background-color: $color-white;
     
         @include tablet {
             flex-direction: row;
@@ -18,11 +18,11 @@
 
     &__section {
         padding: 0 2rem 1.5rem;
-        border-bottom: 0.0625rem solid $color-cloud;
+        border-bottom: 0.1rem solid $color-cloud;
 
         @include tablet {
             border-bottom: none;
-            border-right: 0.0625rem solid $color-cloud;
+            border-right: 0.1rem solid $color-cloud;
             flex-grow: 1;
             padding: 0 2rem 1rem;
         }
@@ -64,7 +64,7 @@
         width: 100%;
         box-sizing: border-box;
         padding: 0.5rem 1rem;
-        border: 0.0625rem solid $color-cloud;
+        border: 0.1rem solid $color-cloud;
         border-radius: 1.25rem;
         position: relative;
 
@@ -153,7 +153,7 @@
         box-sizing: border-box;
         display: flex;
         width: 100%;
-        height: 57px;
+        height: 5.7rem;
         justify-content: space-evenly;
         align-items: center;
 
@@ -165,11 +165,11 @@
 
     &__button-wrapper {
         width: 8rem;
-        height: 36px;
+        height: 3.6rem;
 
         @include tablet {
             width: unset;
-            height: 38px;
+            height: 3.8rem;
             margin-left: 1rem;
         }
     }

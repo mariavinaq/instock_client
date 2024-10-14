@@ -7,11 +7,11 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding:24px;
+		padding:2.4rem;
 
 		@include tablet {
 			border-bottom: 1px solid $color-cloud;
-			padding: 32px 32px 24px;
+			padding: 3.2rem 3.2rem 2.4rem;
 		}
 
 		&__nav {
@@ -26,7 +26,7 @@
 			
 			&-current {
 				margin: 0;
-				margin-left: 4px;
+				margin-left: 0.4rem;
                 @include page-header;
 			}
 		}
@@ -45,9 +45,9 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: 36px;
-				height: 36px;
-				border-radius:50px;
+				width: 3.6rem;
+				height: 3.6rem;
+				border-radius:5rem;
 				text-decoration: none;
 				border: 1px solid $color-cloud;
 				text-decoration: none;
@@ -57,8 +57,8 @@
 				}
 
 				@include tablet {
-					border-radius: 20px;
-					width: 81px;
+					border-radius: 2rem;
+					width: 8.1rem;
 					background-position: calc(100% - 3rem) center;
 				}
 			}
@@ -68,19 +68,19 @@
 				@include tablet {
 					display:flex;
 					color: $color-is-black;
-					padding:4px;
-					gap: 10px;
+					padding: 0.4rem;
+					gap: 1rem;
 
 					&:hover {
-						color: #FFFFFF;
+						color: $color-white;
 					}
 				}
 			}
 
 			&-edit img {
-				width:20px;
-				height:20px;
-				fill: #FFFFFF;
+				width: 2rem;
+				height: 2rem;
+				fill: $color-white;
 			}
 		}
 	}
