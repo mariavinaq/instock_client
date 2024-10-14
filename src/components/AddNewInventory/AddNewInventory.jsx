@@ -84,7 +84,7 @@ function AddNewInventory() {
               Item is required
             </FormError>
             <label className="new-inventory__label">Description</label>
-            <input
+            <textarea
               type="text"
               name="description"
               placeholder="Please enter a brief item description..."
