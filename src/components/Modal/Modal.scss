@@ -9,16 +9,16 @@
     height: 100%;
     max-width: unset;
     max-height: unset;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     padding: 2rem;
     @include tablet {
-        margin: 186px auto;
-        height: 262px;
-        max-width: 672px;
+        margin: 18.6rem auto;
+        height: 26.2rem;
+        max-width: 67.2rem;
     }
     
     @include desktop {
-        height: 262px;
+        height: 26.2rem;
     }
     
     &::backdrop {
@@ -39,7 +39,7 @@
   
     &__close-button {
         color: $color-is-black;
-        background-color: #FFFFFF;
+        background-color: $color-white;
         border: none;
     }
   

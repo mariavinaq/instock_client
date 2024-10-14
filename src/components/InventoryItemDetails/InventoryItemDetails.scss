@@ -3,13 +3,13 @@
 @use '../../styles/partials/variables.scss' as *;
 
 .inventory-details {
-	padding: 24px;
+	padding: 2.4rem;
     display: flex;
 	flex-direction: column;
 	
 	@include tablet {
 		flex-direction: row;
-		padding: 32px;
+		padding: 3.2rem;
 	}
 
 	&__container1{
@@ -18,7 +18,7 @@
 	
 		@include tablet {
 			flex:5;
-			margin-right:2rem;
+			margin-right: 2rem;
 			border-right: 1px solid $color-cloud;
 		}
 	}
@@ -38,7 +38,7 @@
 		flex-direction: row;
 	
 		@include tablet {
-			margin-bottom: 40px;
+			margin-bottom: 4rem;
 		}
 	}
 }
@@ -49,7 +49,7 @@
 .inventory-warehouse {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 16px;
+	margin-bottom: 1.6rem;
 	padding:0;
 	font-weight: 400;
     @include body-medium;
@@ -62,12 +62,12 @@
 	&__label {
 		margin: 0;
 		font-weight: 600;
-		padding-bottom: 4px;
+		padding-bottom: 0.4rem;
 		color: $color-slate;
         @include table-header;
 		@include tablet {
 			font-weight: 600;
-			padding-bottom: 4px;
+			padding-bottom: 0.4rem;
 		}
 	}
 
@@ -75,23 +75,23 @@
 		display: inline-block; 
 		padding:0;
 		margin:0;
-		line-height: 20px;
-		font-size:13px;
+		line-height: 2rem;
+		font-size:1.3rem;
 		color:$color-is-black;
 	
 		@include tablet {
-			line-height: 26px; 
-			font-size:14px;
+			line-height: 2.6rem; 
+			font-size: 1.4rem;
 		}
 	}
 }
 
 .inventory-description {
 	&__content {
-		width:295px;
+		width:29.5rem;
 
 		@include tablet {
-			margin-bottom:28px;
+			margin-bottom:2.8rem;
 		}
 
 		@include desktop {
@@ -114,35 +114,35 @@
 	&__label {
 		margin: 0;
 		font-weight: 600;
-		padding-bottom: 4px;
-		font-size:11px;
+		padding-bottom: 0.4rem;
+		font-size: 1.1rem;
 		color: $color-slate;
         @include table-header;
 		
 
 		@include tablet {
-			font-size:12px;
+			font-size:1.2rem;
 			font-weight: 600;
 		}
 	}
 
 	&__content {
-		border-radius: 20px;
+		border-radius: 2rem;
 		display: inline-block; 
     	justify-content: center;
     	align-items: center;
 		text-transform: uppercase;
 		white-space: nowrap;
 		margin: 0;
-		padding: 4px 8px; 
-		line-height: 20px;
-		margin-bottom: 16px;
+		padding: 0.4rem 0.8rem; 
+		line-height: 2rem;
+		margin-bottom: 1.6rem;
 		font-weight: 600;
-		font-size:11px;
+		font-size: 1.1rem;
 		cursor: pointer;
 	
 		@include tablet {
-			line-height: 22px; 
+			line-height: 2.2rem; 
 		}
 
 		&.in-stock {
@@ -154,19 +154,19 @@
 		&.out-of-stock {
 			background-color: rgba($color-red, 7%);
 			color: $color-red; 
-			width:70px;
+			width:7rem;
 		}
 	}
 }
 
 .inventory-warehouse {
-	margin-bottom: 8px;
+	margin-bottom: 0.8rem;
 }
 
 .inventory-quantity {
     display: flex;
 	flex-direction: column;
 	@include tablet {
-		margin-bottom: 16px;
+		margin-bottom: 1.6rem;
 	}
 }
