@@ -3,6 +3,7 @@ import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import FormError from '../FormError/FormError';
 
 function EditWarehouseItem() {
   const { id } = useParams();
@@ -16,6 +17,7 @@ function EditWarehouseItem() {
   const [contactPosition, setContactPosition] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [formErrors, setFormErrors] = useState({});
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,36 +47,37 @@ function EditWarehouseItem() {
     fetchWarehouseData();
   }, [id]);
 
-  const handleChangeWarehouseName = (event) => {setWarehouseName(event.target.value)};
-  const handleChangeAddress = (event) => {setAddress(event.target.value)};
-  const handleChangeCity = (event) => {setCity(event.target.value)};
-  const handleChangeCountry = (event) => {setCountry(event.target.value)};
-  const handleChangeContactName = (event) => {setContactName(event.target.value)};
-  const handleChangeContactPosition = (event) =>
-    {setContactPosition(event.target.value)};
-  const handleChangeContactPhone = (event) =>
-    {setContactPhone(event.target.value)};
-  const handleChangeContactEmail = (event) =>
-    {setContactEmail(event.target.value)};
+  const handleChangeWarehouseName = (event) => setWarehouseName(event.target.value);
+  const handleChangeAddress = (event) => setAddress(event.target.value);
+  const handleChangeCity = (event) => setCity(event.target.value);
+  const handleChangeCountry = (event) => setCountry(event.target.value);
+  const handleChangeContactName = (event) => setContactName(event.target.value);
+  const handleChangeContactPosition = (event) => setContactPosition(event.target.value);
+  const handleChangeContactPhone = (event) => setContactPhone(event.target.value);
+  const handleChangeContactEmail = (event) => setContactEmail(event.target.value);
 
   const validateForm = () => {
-    return (
-      warehouseName.trim() !== "" &&
-      address.trim() !== "" &&
-      city.trim() !== "" &&
-      country.trim() !== "" &&
-      contactName.trim() !== "" &&
-      contactPosition.trim() !== "" &&
-      contactPhone.trim() !== "" &&
-      contactEmail.trim() !== "" &&
-      isValidEmail(contactEmail)
-    );
-  };
-
-  const isValidEmail = (email) => {
+    const newErrors = {};
+    const phoneRegex = /^\+1\s\(\d{3}\)\s\d{3}-\d{4}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+
+    if (warehouseName.trim() === "") newErrors.warehouseName = "Warehouse name is required.";
+    if (address.trim() === "") newErrors.address = "Address is required.";
+    if (city.trim() === "") newErrors.city = "City is required.";
+    if (country.trim() === "") newErrors.country = "Country is required.";
+    if (contactName.trim() === "") newErrors.contactName = "Contact name is required.";
+    if (contactPosition.trim() === "") newErrors.contactPosition = "Contact position is required.";
+    if (!phoneRegex.test(contactPhone)) {
+      newErrors.contactPhone = "Please provide a valid phone number in the format: +1 (###) ###-####.";
+    }
+    if (!emailRegex.test(contactEmail)) {
+      newErrors.contactEmail = "Please provide a valid email address.";
+    }
+
+    setFormErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+};
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -108,10 +111,6 @@ function EditWarehouseItem() {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>Error occurred. Please try again.</div>;
-  }
-
   return (
     <div className="editWarehouse">
       <div className="editWarehouse__empty"></div>
@@ -132,120 +131,129 @@ function EditWarehouseItem() {
             <div className="editWarehouse__form-section editWarehouse__form-warehouse">
               <h2 className="editWarehouse__form-details">Warehouse Details</h2>
 
-              <label
-                className="editWarehouse__form-label"
-                htmlFor="warehouse_name"
-              >
+              <label className="editWarehouse__form-label" htmlFor="warehouse_name">
                 Warehouse Name
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.warehouseName ? 'editWarehouse__form-input--error' : ''}`}
                 name="warehouse_name"
                 id="warehouse_name"
                 placeholder="Warehouse Name"
                 onChange={handleChangeWarehouseName}
                 value={warehouseName}
-              ></input>
+              />
+              <FormError errorState={formErrors.warehouseName}>
+                {formErrors.warehouseName}
+              </FormError>
 
               <label className="editWarehouse__form-label" htmlFor="address">
                 Street Name
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.address ? 'editWarehouse__form-input--error' : ''}`}
                 name="address"
                 id="address"
                 placeholder="Street Name"
                 onChange={handleChangeAddress}
                 value={address}
-              ></input>
+              />
+              <FormError errorState={formErrors.address}>
+                {formErrors.address}
+              </FormError>
 
               <label className="editWarehouse__form-label" htmlFor="city">
                 City
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.city ? 'editWarehouse__form-input--error' : ''}`}
                 name="city"
                 id="city"
                 placeholder="City"
                 onChange={handleChangeCity}
                 value={city}
-              ></input>
+              />
+              <FormError errorState={formErrors.city}>
+                {formErrors.city}
+              </FormError>
 
               <label className="editWarehouse__form-label" htmlFor="country">
                 Country
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.country ? 'editWarehouse__form-input--error' : ''}`}
                 name="country"
                 id="country"
                 onChange={handleChangeCountry}
                 placeholder="Country"
                 value={country}
-              ></input>
+              />
+              <FormError errorState={formErrors.country}>
+                {formErrors.country}
+              </FormError>
             </div>
 
             <div className="editWarehouse__form-section editWarehouse__form-contactDetails">
               <h2 className="editWarehouse__form-details">Contact Details</h2>
 
-              <label
-                className="editWarehouse__form-label"
-                htmlFor="contact_name"
-              >
+              <label className="editWarehouse__form-label" htmlFor="contact_name">
                 Contact Name
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.contactName ? 'editWarehouse__form-input--error' : ''}`}
                 name="contact_name"
                 id="contact_name"
                 placeholder="Contact Name"
                 onChange={handleChangeContactName}
                 value={contactName}
-              ></input>
+              />
+              <FormError errorState={formErrors.contactName}>
+                {formErrors.contactName}
+              </FormError>
 
-              <label
-                className="editWarehouse__form-label"
-                htmlFor="contact_position"
-              >
+              <label className="editWarehouse__form-label" htmlFor="contact_position">
                 Position
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.contactPosition ? 'editWarehouse__form-input--error' : ''}`}
                 name="contact_position"
                 id="contact_position"
                 placeholder="Position"
                 onChange={handleChangeContactPosition}
                 value={contactPosition}
-              ></input>
+              />
+              <FormError errorState={formErrors.contactPosition}>
+                {formErrors.contactPosition}
+              </FormError>
 
-              <label
-                className="editWarehouse__form-label"
-                htmlFor="contact_phone"
-              >
+              <label className="editWarehouse__form-label" htmlFor="contact_phone">
                 Phone Number
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.contactPhone ? 'editWarehouse__form-input--error' : ''}`}
                 name="contact_phone"
                 id="contact_phone"
                 placeholder="Phone Number"
                 onChange={handleChangeContactPhone}
                 value={contactPhone}
-              ></input>
+              />
+              <FormError errorState={formErrors.contactPhone}>
+                {formErrors.contactPhone}
+              </FormError>
 
-              <label
-                className="editWarehouse__form-label"
-                htmlFor="contact_email"
-              >
+              <label className="editWarehouse__form-label" htmlFor="contact_email">
                 Email
               </label>
               <input
-                className="editWarehouse__form-input"
+                className={`editWarehouse__form-input ${formErrors.contactEmail ? 'editWarehouse__form-input--error' : ''}`}
                 name="contact_email"
                 id="contact_email"
                 placeholder="Email"
                 onChange={handleChangeContactEmail}
                 value={contactEmail}
-              ></input>
+              />
+              <FormError errorState={formErrors.contactEmail}>
+                {formErrors.contactEmail}
+              </FormError>
             </div>
           </div>
 
@@ -270,3 +278,4 @@ function EditWarehouseItem() {
 }
 
 export default EditWarehouseItem;
+
