@@ -88,6 +88,10 @@
             border-width: 0.1rem;
             margin-top: 0.5rem;
             color: $color-is-black;
+            
+            &--error {
+                border-color: $color-red;
+            }
         }
 
         &-buttons{
@@ -139,6 +143,4 @@
             }
         }
     }
-
-
 }
