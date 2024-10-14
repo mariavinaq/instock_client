@@ -10,6 +10,10 @@
     color: $color-is-black;
     padding: 2.4rem;
 
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+
     &:hover {
         background-color: #2E66E512;
     }
@@ -135,7 +139,7 @@
 
     &__chevron {
         height: 2rem;
-        margin-left: 0.25rem;
+        margin-left: 0.5rem;
         @include chevron-transition;
     }
 
@@ -146,7 +150,6 @@
         align-items: center;
         text-transform: uppercase;
         white-space: nowrap;
-        cursor: pointer;
         padding: 0.4rem 0.8rem;
         line-height: 2rem;
         font-size: 1.1rem;

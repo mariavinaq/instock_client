@@ -75,13 +75,16 @@ function WarehouseInventory({ inventory, handleOpenInventoryModal }) {
         </div>
       </div>
       <ul className="warehouse-inventory__items">
-        {items.map((item) => (
-          <WarehouseInventoryItem
-            key={item.id}
-            item={item}
-            handleOpenInventoryModal={handleOpenInventoryModal}
-          />
-        ))}
+        {
+        items.length === 0 ? <li className="warehouse-inventory__none">There are no inventories at this warehouse.</li> :
+            items.map((item) => (
+                <WarehouseInventoryItem
+                  key={item.id}
+                  item={item}
+                  handleOpenInventoryModal={handleOpenInventoryModal}
+                />
+            ))
+        }
       </ul>
     </section>
   );
