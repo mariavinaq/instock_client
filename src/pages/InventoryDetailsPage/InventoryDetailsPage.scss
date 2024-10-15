@@ -1,0 +1,87 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.inventory-details {
+	&-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding:2.4rem;
+
+		@include tablet {
+			border-bottom: 1px solid $color-cloud;
+			padding: 3.2rem 3.2rem 2.4rem;
+		}
+
+		&__nav {
+			display: flex;
+			align-items: center;
+			color:$color-is-black;
+
+			&-arrow {
+				padding-top:0.5rem;
+				cursor: pointer;
+			}
+			
+			&-current {
+				margin: 0;
+				margin-left: 0.4rem;
+                @include page-header;
+			}
+		}
+
+		&__btn {
+			border: none;
+			display: flex;
+			background-color: transparent;
+			justify-content: row;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 3.6rem;
+				height: 3.6rem;
+				border-radius:5rem;
+				text-decoration: none;
+				border: 1px solid $color-cloud;
+				text-decoration: none;
+							
+				&:hover {
+					background-color: $color-graphite; 
+				}
+
+				@include tablet {
+					border-radius: 2rem;
+					width: 8.1rem;
+					background-position: calc(100% - 3rem) center;
+				}
+			}
+
+			&-text {
+				display:none;
+				@include tablet {
+					display:flex;
+					color: $color-is-black;
+					padding: 0.4rem;
+					gap: 1rem;
+
+					&:hover {
+						color: $color-white;
+					}
+				}
+			}
+
+			&-edit img {
+				width: 2rem;
+				height: 2rem;
+				fill: $color-white;
+			}
+		}
+	}
+}

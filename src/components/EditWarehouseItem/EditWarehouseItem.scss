@@ -1,0 +1,148 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.editWarehouse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-lightgrey;
+
+    &__header {
+        display: flex;
+        justify-content: left;
+        align-items: baseline;
+        background-color: $color-white;
+        width: 100%;
+        height: 9.7rem;
+        border-bottom: solid $color-cloud;
+        border-width: 0.1rem;
+        padding: 2rem;
+        font-size: 2.8rem;
+        z-index: 1;
+
+        @include tablet {
+            padding: 3rem;
+        }
+        &-icon {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__formWrapper {
+        background-color: $color-white;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            &-sections {
+                display: flex;
+            }
+        }
+
+        &-section {
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            padding: 2rem 2rem 2rem 2rem;
+
+            @include tablet {
+                width: 100%;
+                margin: 2rem 0 3rem 0;
+                padding: 0 3rem 0 3rem;
+            }
+        }
+        &-warehouse {
+            border-bottom: 1px solid $color-cloud;
+            border-width: 0.1rem;
+
+            @include tablet {
+                border-bottom: none;
+                border-right: 1px solid $color-cloud;
+                border-width: 0.1rem;
+            }
+        }
+
+        &-details {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        &-label {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        &-input {
+            border-radius: 2rem;
+            height: 3.6rem;
+            padding: 0 1.5rem;
+            font-size: 1.3rem;
+            border: 1px solid $color-cloud;
+            border-width: 0.1rem;
+            margin-top: 0.5rem;
+            color: $color-is-black;
+            
+            &--error {
+                border-color: $color-red;
+            }
+        }
+
+        &-buttons{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            padding: 1rem;
+            background-color: $color-lightgrey;
+            height: 6.8rem;
+
+            @include tablet {
+                height: 7rem;
+                padding-right: 2rem;
+            }
+        }
+
+        &-button {
+            height: 3.6rem;
+            width: 100%;
+            border-radius: 2rem;
+            margin: 0 1rem;
+        }
+
+        &-cancel {
+            border: 1px solid $color-cloud;
+            border-width: 0.1rem;
+            background-color: $color-white;
+            color: $color-slate;
+
+            @include tablet {
+                padding: 0 1.75rem;
+                width: auto;
+            }
+
+            &:hover {
+                border: solid $color-is-indigo;
+                color: $color-is-indigo;
+            }
+        }
+        &-add {
+            border: none;
+            background-color: $color-is-indigo;
+            color: $color-white;
+
+            @include tablet {
+                padding: 0 1.75rem;
+                width: auto;
+            }
+            &:hover {
+                background-color: $color-graphite;
+            }
+        }
+    }
+}

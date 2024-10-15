@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+
+.inventory-page {
+  display: flex;
+  flex-direction: column;
+}

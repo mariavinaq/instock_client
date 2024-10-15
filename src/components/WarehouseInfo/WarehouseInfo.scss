@@ -1,0 +1,125 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouse-details {
+    background-color: $color-white;
+
+    &__header {
+        display: flex;
+        align-items: baseline;
+        padding: $pad-increment*4 $pad-increment*3 $pad-increment*3;
+        border-bottom: 0.1rem solid $color-cloud;
+
+        @include tablet {
+            padding-left: $pad-increment*4;
+            padding-right: $pad-increment*4;
+        }
+
+        @include desktop {
+            padding-left: $pad-increment*5;
+            padding-right: $pad-increment*5;
+        }
+    }
+
+    &__back {
+        margin-right: 1rem;
+    }
+
+    &__edit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $pad-increment*0.5;
+        width: 3.6rem;
+        height: 3.6rem;
+        margin-left: auto;
+        border: none;
+        border-radius: 50%;
+        background-color: $color-is-indigo;
+        color: $color-white;
+        cursor: pointer;
+
+        @include tablet {
+            width: min-content;
+            padding: 0 1.6rem;
+            border-radius: 2rem;
+        }
+    }
+
+    &__edit-button-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__edit-button-label {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            @include labels-links-buttons;
+        }
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        gap: $pad-increment*4.75;
+        padding: $pad-increment*2 $pad-increment*3;
+
+        @include tablet {
+            flex-direction: row;
+            padding: $pad-increment*3 $pad-increment*4;
+        }
+
+        @include desktop {
+            padding-left: $pad-increment*5;
+            padding-right: $pad-increment*5;
+        }
+    }
+
+    &__address {
+        @include tablet {
+            width: 38%;
+            border-right: 1px solid $color-cloud;
+        }
+
+        @include desktop {
+            width: 39.5%;
+        }
+    }
+
+    &__contact {
+        display: flex;     
+        gap: $pad-increment*3;
+
+        @include tablet {
+            flex: 1;
+            gap: 0;
+        }
+    }
+
+    &__column {
+        width: 50%;
+
+        @include tablet {
+            width: 47%;
+        }
+
+        &--address {
+            width: 100%;
+
+            @include tablet {
+                width: 13rem;
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: 0.25rem;
+        @include table-header;
+    }
+
+    &__data {
+        @include body-medium;
+    }
+}

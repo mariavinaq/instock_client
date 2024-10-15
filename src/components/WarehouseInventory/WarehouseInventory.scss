@@ -1,0 +1,96 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.warehouse-inventory {
+    display: flex;
+    flex-direction: column;
+
+    &__labels {
+        display: none;
+        font-weight: 600;
+        @include body-small;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba($color-lightgrey, 70%);
+            color: $color-slate;
+            padding: 0.4rem 3.2rem;
+            height: 4.0rem;
+        }
+
+        @include desktop {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }
+
+    &__label {
+        @include table-header;
+        @include tablet {
+            &-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &--inventory {
+                    @include tablet {
+                        width: 23%;
+                    }
+                }
+
+                &--category {
+                    @include tablet {
+                        width: 20%;
+                    }
+                }
+
+                &--status {
+                    @include tablet {
+                        width: 27%;
+                    }
+                }
+
+                &--quantity {
+                    @include tablet {
+                        width: 20%;
+                    }
+                }
+
+                &--actions {
+                    @include tablet {
+                        justify-content: end;
+                        width: 10%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__sort {
+        @include tablet {
+            background: none;
+            padding: 0;
+            margin-left: 0.35rem;
+            vertical-align: middle;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    &__items {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__none {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+        @include body-medium;
+    }
+}

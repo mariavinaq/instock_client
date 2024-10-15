@@ -1,0 +1,90 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.warehouse-list{
+    padding:0;
+    margin:0;
+    &__not-found{
+      text-align: center;
+      padding: 4rem;
+    }
+}
+.warehouse-list-section{
+    display: flex;
+    flex-direction: column;
+    &__labels {
+        display: none;
+        @include body-small;
+        @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba($color-lightgrey, 70%);
+        color: $color-slate;
+        padding: 0.4rem 3.2rem;
+        height: 4rem;
+        }
+    }
+	&__label {
+			&-container {
+        @include tablet {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+        padding-right: 1.75rem;
+        }
+  
+        @include desktop {
+          justify-content: unset;
+        }
+
+        &-warehouse {
+          @include tablet {
+            flex: 0 0 20%;
+          }
+        }
+        &-address {
+          @include tablet {
+            flex: 1 0 18%;
+            padding-right: 3rem;
+          }
+        }
+        &-name{
+          @include tablet {
+            flex: 0 0 20%;
+          }
+        }
+        &-info {
+          @include tablet {
+            flex: 0 0 27%;
+            max-width: 20rem;
+          }
+        }
+        &-action {
+          @include tablet {
+            justify-content: end;
+            flex: 0 0 8%;
+            padding-right: 0;
+          }
+        }
+			}
+	}
+}
+
+.warehouse-list-section__label{
+  &-img {
+    @include tablet {
+      background: none;
+      padding: 0;
+      margin-left: 0.35rem;
+      vertical-align: middle; 
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+
+}
+
+   

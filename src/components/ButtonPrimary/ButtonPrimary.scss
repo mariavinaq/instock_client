@@ -1,0 +1,30 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.primary-button {
+    all: unset;
+    background-color: $color-is-indigo;
+    color: #FFFFFF;
+    width: 100%;
+    height: 36px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    @include labels-links-buttons;
+    @include tablet {
+      width: auto;
+      padding: 0 1.75rem;
+      height: 38px;
+      font-weight: 600;
+    }
+
+    @include desktop {
+      font-weight: 600;
+    }
+
+    &:hover {
+      background-color: $color-is-black;
+    }
+}

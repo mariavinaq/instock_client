@@ -1,0 +1,24 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.input-error {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0;
+    height: 3rem;
+    
+    &__icon {
+        display: block;
+        height: 1.4rem;
+        width: 1.4rem;
+    }
+
+    &__message {
+        color: $color-red;
+        margin-left: 0.25rem;
+        @include body-small;
+    }
+}
