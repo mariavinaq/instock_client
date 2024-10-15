@@ -39,6 +39,10 @@
         color: $color-white;
         cursor: pointer;
 
+        &:hover {
+            background-color: $color-graphite; 
+        }
+
         @include tablet {
             width: min-content;
             padding: 0 1.6rem;

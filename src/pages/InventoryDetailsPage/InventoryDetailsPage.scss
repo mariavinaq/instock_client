@@ -36,10 +36,7 @@
 			display: flex;
 			background-color: transparent;
 			justify-content: row;
-
-			&:hover {
-				cursor: pointer;
-			}
+			align-items: center;
 
 			&-container {
 				display: flex;
@@ -49,8 +46,10 @@
 				height: 3.6rem;
 				border-radius:5rem;
 				text-decoration: none;
+				background-color: $color-is-indigo;
 				border: 1px solid $color-cloud;
 				text-decoration: none;
+				color: inherit;
 							
 				&:hover {
 					background-color: $color-graphite; 
@@ -67,17 +66,13 @@
 				display:none;
 				@include tablet {
 					display:flex;
-					color: $color-is-black;
+					color: $color-white;
 					padding: 0.4rem;
 					gap: 1rem;
-
-					&:hover {
-						color: $color-white;
-					}
 				}
 			}
 
-			&-edit img {
+			&-edit {
 				width: 2rem;
 				height: 2rem;
 				fill: $color-white;
