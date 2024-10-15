@@ -88,13 +88,19 @@ function WarehouseList({
           </div>
         </div>
         <ul className="warehouse-list">
-          {items.map((item) => (
-            <WarehouseItem
-              key={item.id}
-              warehouse={item}
-              handleOpenWarehouseModal={handleOpenWarehouseModal}
-            />
-          ))}
+          {items && items.length > 0 ? (
+            items.map((item) => (
+              <WarehouseItem
+                key={item.id}
+                warehouse={item}
+                handleOpenWarehouseModal={handleOpenWarehouseModal}
+              />
+            ))
+          ) : (
+            <h2 className="warehouse-list__not-found">
+              Item with {`"${keyword}"`} keyword not found in the warehouse list
+            </h2>
+          )}
         </ul>
       </section>
     </>
