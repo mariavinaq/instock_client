@@ -268,7 +268,7 @@ function EditWarehouseItem() {
               className="editWarehouse__form-button editWarehouse__form-add"
               type="submit"
             >
-              + Edit Warehouse
+              Save
             </button>
           </div>
         </form>
