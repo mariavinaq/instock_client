@@ -5,6 +5,10 @@
 .inventory-list{
     padding:0;
     margin:0;
+    &__not-found{
+      text-align: center;
+      padding: 4rem;
+    }
 }
 
 .inventory-list-section{

@@ -96,13 +96,19 @@ function InventoryList({
           </div>
         </div>
         <ul className="inventory-list">
-          {items.map((item) => (
-            <InventoryItem
-              key={item.id}
-              inventory={item}
-              handleOpenInventoryModal={handleOpenInventoryModal}
-            />
-          ))}
+          {items && items.length > 0 ? (
+            items.map((item) => (
+              <InventoryItem
+                key={item.id}
+                inventory={item}
+                handleOpenInventoryModal={handleOpenInventoryModal}
+              />
+            ))
+          ) : (
+            <h2 className="inventory-list__not-found">
+              Item with {`[${keyword}]`} keyword not found in the inventory list
+            </h2>
+          )}
         </ul>
       </section>
     </div>
