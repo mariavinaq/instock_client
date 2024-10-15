@@ -106,7 +106,7 @@ function InventoryList({
             ))
           ) : (
             <h2 className="inventory-list__not-found">
-              Item with {`[${keyword}]`} keyword not found in the inventory list
+              Item with {`"${keyword}"`} keyword not found in the inventory list
             </h2>
           )}
         </ul>

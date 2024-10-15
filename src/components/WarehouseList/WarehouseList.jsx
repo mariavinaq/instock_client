@@ -98,7 +98,7 @@ function WarehouseList({
             ))
           ) : (
             <h2 className="warehouse-list__not-found">
-              Item with {`[${keyword}]`} keyword not found in the warehouse list
+              Item with {`"${keyword}"`} keyword not found in the warehouse list
             </h2>
           )}
         </ul>
