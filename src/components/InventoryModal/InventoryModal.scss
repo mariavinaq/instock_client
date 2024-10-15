@@ -15,11 +15,10 @@
 }
 
 .inventory-modal__message {
-
     text-align: left;
     margin-top: 1rem;
+    letter-spacing: 0.02rem;
     flex-grow: 1;
-
     @include body-large;
     @include tablet {
         margin: 0 3rem;
