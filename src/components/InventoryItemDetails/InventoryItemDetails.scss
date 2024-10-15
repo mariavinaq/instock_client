@@ -139,7 +139,6 @@
 		margin-bottom: 1.6rem;
 		font-weight: 600;
 		font-size: 1.1rem;
-		cursor: pointer;
 	
 		@include tablet {
 			line-height: 2.2rem; 
@@ -148,13 +147,13 @@
 		&.in-stock {
 			background-color: rgba($color-green, 7%);
 			color: $color-green;
-			width:52px;
+			width:6rem;
 		}
 
 		&.out-of-stock {
 			background-color: rgba($color-red, 7%);
 			color: $color-red; 
-			width:7rem;
+			width:8.5rem;
 		}
 	}
 }

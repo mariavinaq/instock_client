@@ -19,7 +19,6 @@ function InventoryDetailsPage() {
           `http://localhost:8080/inventories/${id}`
         );
         setInventoryDetails(response.data);
-        console.log("Inventories" + response.data);
       } catch (error) {
         console.error(`Error fetching data: ${error}`);
       }
