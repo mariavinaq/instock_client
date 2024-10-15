@@ -12,10 +12,10 @@
     color:#ffff;
     border-radius: 2rem;
     text-align: center;
-    @include body-small;
+    @include body-medium;
     @include tablet {
       width: unset;
-      padding: 0 1rem;
+      padding: 0 1.75rem;
       height: 38px;
     }
     &:hover {

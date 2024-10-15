@@ -47,7 +47,7 @@
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        gap: 1.5rem;
         width: 100%;
   
         @include tablet {
@@ -59,7 +59,7 @@
     }
   
     &__cancel {
-      width: 45%;
+      width: 100%;
   
       @include tablet {
         width: unset;
@@ -67,7 +67,7 @@
     }
   
     &__submit {
-      width: 45%;
+      width: 100%;
   
       @include tablet {
         width: unset;
