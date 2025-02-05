@@ -4,6 +4,7 @@ import InventoryForm from "../../components/InventoryForm/InventoryForm";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import API_URL from "../../utils/utils";
 
 function EditInventoryItem() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function EditInventoryItem() {
     const getItem = async () => {
       try {
         const itemResponse = await axios.get(
-          `http://localhost:8080/inventories/${id}`
+          `${API_URL}/inventories/${id}`
         );
         const itemData = itemResponse.data;
         setData(itemData);
@@ -32,7 +33,7 @@ function EditInventoryItem() {
     const getWarehouse = async () => {
       try {
         const warehouseResponse = await axios.get(
-          `http://localhost:8080/warehouses`
+          `${API_URL}/warehouses`
         );
         const warehouseList = warehouseResponse.data;
         const itemWarehouse = warehouseList.find(

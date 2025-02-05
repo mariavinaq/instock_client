@@ -4,6 +4,7 @@ import "./AddNewInventory.scss";
 import { useNavigate } from "react-router-dom";
 import InventoryFormHeader from "../InventoryFormHeader/InventoryFormHeader";
 import FormError from "../FormError/FormError";
+import API_URL from "../../utils/utils";
 
 function AddNewInventory() {
   const [itemName, setItemName] = useState("");
@@ -20,7 +21,7 @@ function AddNewInventory() {
   useEffect(() => {
     const getWarehouses = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/warehouses");
+        const response = await axios.get(`${API_URL}/warehouses`);
         setWarehouseList(response.data);
       } catch (error) {
         console.error("Error fetching warehouses:", error);
@@ -54,7 +55,7 @@ function AddNewInventory() {
     };
 
     try {
-      await axios.post("http://localhost:8080/inventories", newInventoryItem);
+      await axios.post(`${API_URL}/inventories`, newInventoryItem);
       navigate(-1);
     } catch (error) {
       console.error("Unable to add inventory item:", error);

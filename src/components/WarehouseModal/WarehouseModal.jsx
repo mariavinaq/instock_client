@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./WarehouseModal.scss";
 import Modal from "../Modal/Modal";
+import API_URL from "../../utils/utils";
 
 export default function WarehouseModal({
   isOpen,
@@ -16,7 +17,7 @@ export default function WarehouseModal({
       try {
         if (isOpen && warehouseId) {
           const response = await axios.get(
-            `http://localhost:8080/warehouses/${warehouseId}`
+            `${API_URL}/warehouses/${warehouseId}`
           );
           setWarehouseName(response.data.warehouse_name);
         }
@@ -29,7 +30,7 @@ export default function WarehouseModal({
   }, [isOpen, warehouseId]);
   const deleteWarehouse = async () => {
     try {
-      await axios.delete(`http://localhost:8080/warehouses/${warehouseId}`);
+      await axios.delete(`${API_URL}/warehouses/${warehouseId}`);
       fetchData();
       onClose();
     } catch (error) {

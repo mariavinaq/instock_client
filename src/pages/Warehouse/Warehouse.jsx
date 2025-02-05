@@ -3,6 +3,7 @@ import axios from "axios";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import WarehouseHeader from "../../components/WarehouseHeader/WarehouseHeader";
 import WarehouseModal from "../../components/WarehouseModal/WarehouseModal";
+import API_URL from "../../utils/utils";
 
 function Warehouse() {
   const [warehouseData, setWarehouseData] = useState([]);
@@ -23,7 +24,7 @@ function Warehouse() {
 
   const fetchWarehouses = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/warehouses`);
+      const response = await axios.get(`${API_URL}/warehouses`);
       setWarehouseData(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -38,7 +39,7 @@ function Warehouse() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/warehouses/match/${keyword}`
+          `${API_URL}/warehouses/match/${keyword}`
         );
 
         setResults(response.data);

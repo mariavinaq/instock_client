@@ -4,6 +4,7 @@ import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FormError from '../FormError/FormError';
+import API_URL from '../../utils/utils';
 
 function AddNewWarehouse() {
     const [error, setError] = useState(false);
@@ -58,7 +59,7 @@ function AddNewWarehouse() {
         }
 
         try {
-            const response = await axios.post("http://localhost:8080/warehouses", newWarehouse);
+            const response = await axios.post(`${API_URL}/warehouses`, newWarehouse);
             if (response) {
                 event.target.reset();
                 navigate("/warehouses");

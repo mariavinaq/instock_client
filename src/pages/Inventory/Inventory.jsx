@@ -4,6 +4,7 @@ import InventoryList from "../../components/InventoryList/InventoryList";
 import InventoryHeader from "../../components/InventoryHeader/InventoryHeader";
 import axios from "axios";
 import InventoryModal from "../../components/InventoryModal/InventoryModal";
+import API_URL from "../../utils/utils";
 
 function Inventory() {
   const [inventory, setInventory] = useState([]);
@@ -23,7 +24,7 @@ function Inventory() {
   };
   const fetchInventories = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/inventories`);
+      const response = await axios.get(`${API_URL}/inventories`);
       setInventory(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -38,7 +39,7 @@ function Inventory() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/inventories/match/${keyword}`
+          `${API_URL}/inventories/match/${keyword}`
         );
 
         setResults(response.data);

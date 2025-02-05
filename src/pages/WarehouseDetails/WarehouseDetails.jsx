@@ -4,6 +4,7 @@ import axios from "axios";
 import WarehouseInfo from "../../components/WarehouseInfo/WarehouseInfo";
 import WarehouseInventory from "../../components/WarehouseInventory/WarehouseInventory";
 import InventoryModal from "../../components/InventoryModal/InventoryModal";
+import API_URL from "../../utils/utils";
 
 function WarehouseDetails() {
   const { id } = useParams();
@@ -25,7 +26,7 @@ function WarehouseDetails() {
   const getWarehouse = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/warehouses/${id}`
+        `${API_URL}/warehouses/${id}`
       );
       setWarehouseData(response.data);
     } catch (error) {
@@ -36,7 +37,7 @@ function WarehouseDetails() {
   const getWarehouseInventory = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/warehouses/${id}/inventories`
+        `${API_URL}/warehouses/${id}/inventories`
       );
       setWarehouseInventory(response.data);
     } catch (error) {

@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import ButtonPrimary from '../ButtonPrimary/ButtonPrimary';
 import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import FormError from '../FormError/FormError';
+import API_URL from '../../utils/utils';
 
 function InventoryForm ({ data, button, warehouseId }) {
     const navigate = useNavigate();
@@ -25,7 +26,7 @@ function InventoryForm ({ data, button, warehouseId }) {
     useEffect(() => {
         const getWarehouses = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/warehouses`);
+                const response = await axios.get(`${API_URL}/warehouses`);
                 setWarehouseList(response.data);
             } catch (error) {
                 console.error(`Error fetching data: ${error}`);
@@ -114,9 +115,9 @@ function InventoryForm ({ data, button, warehouseId }) {
                     "quantity": quantity
                 }
                 if (id) {
-                    axios.put(`http://localhost:8080/inventories/${data.id}`, requestBody)
+                    axios.put(`${API_URL}/inventories/${data.id}`, requestBody)
                 } else {
-                    axios.post('http://localhost:8080/inventories', requestBody)
+                    axios.post(`${API_URL}/inventories`, requestBody)
                 }
                 navigate(-1);
             } catch (error) {

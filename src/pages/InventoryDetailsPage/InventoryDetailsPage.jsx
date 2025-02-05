@@ -6,6 +6,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import Edit from "../../assets/icons/edit-white-24px.svg";
 import BackArrow from "../../assets/icons/arrow_back-24px.svg";
 import InventoryItemDetails from "../../components/InventoryItemDetails/InventoryItemDetails";
+import API_URL from "../../utils/utils";
 
 function InventoryDetailsPage() {
   const { id } = useParams();
@@ -16,7 +17,7 @@ function InventoryDetailsPage() {
     const fetchDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/inventories/${id}`
+          `${API_URL}/inventories/${id}`
         );
         setInventoryDetails(response.data);
       } catch (error) {
