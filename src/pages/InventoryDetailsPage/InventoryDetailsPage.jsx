@@ -17,7 +17,7 @@ function InventoryDetailsPage() {
     const fetchDetails = async () => {
       try {
         const response = await axios.get(
-          `${API_URL}/inventories/${id}`
+          `${API_URL}inventories/${id}`
         );
         setInventoryDetails(response.data);
       } catch (error) {

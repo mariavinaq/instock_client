@@ -24,7 +24,7 @@ function Warehouse() {
 
   const fetchWarehouses = async () => {
     try {
-      const response = await axios.get(`${API_URL}/warehouses`);
+      const response = await axios.get(`${API_URL}warehouses`);
       setWarehouseData(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -39,7 +39,7 @@ function Warehouse() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `${API_URL}/warehouses/match/${keyword}`
+          `${API_URL}warehouses/match/${keyword}`
         );
 
         setResults(response.data);

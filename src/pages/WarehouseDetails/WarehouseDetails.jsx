@@ -26,7 +26,7 @@ function WarehouseDetails() {
   const getWarehouse = async () => {
     try {
       const response = await axios.get(
-        `${API_URL}/warehouses/${id}`
+        `${API_URL}warehouses/${id}`
       );
       setWarehouseData(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ function WarehouseDetails() {
   const getWarehouseInventory = async () => {
     try {
       const response = await axios.get(
-        `${API_URL}/warehouses/${id}/inventories`
+        `${API_URL}warehouses/${id}/inventories`
       );
       setWarehouseInventory(response.data);
     } catch (error) {

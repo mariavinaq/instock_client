@@ -17,7 +17,7 @@ export default function InventoryModal({
       try {
         if (isOpen && inventoryId) {
           const response = await axios.get(
-            `${API_URL}/inventories/${inventoryId}`
+            `${API_URL}inventories/${inventoryId}`
           );
           setInventoryName(response.data.item_name);
         }
@@ -31,7 +31,7 @@ export default function InventoryModal({
 
   const deleteInventory = async () => {
     try {
-      await axios.delete(`${API_URL}/inventories/${inventoryId}`);
+      await axios.delete(`${API_URL}inventories/${inventoryId}`);
       fetchData();
       onClose();
     } catch (error) {

@@ -26,7 +26,7 @@ function EditWarehouseItem() {
     const fetchWarehouseData = async () => {
       try {
         const response = await axios.get(
-          `${API_URL}/warehouses/${id}`
+          `${API_URL}warehouses/${id}`
         );
         const warehouseData = response.data;
         setWarehouseName(warehouseData.warehouse_name);
@@ -100,7 +100,7 @@ function EditWarehouseItem() {
         contact_email: contactEmail,
       };
 
-      await axios.put(`${API_URL}/warehouses/${id}`, requestBody);
+      await axios.put(`${API_URL}warehouses/${id}`, requestBody);
       navigate(-1);
     } catch (error) {
       console.error("Unable to update warehouse:", error);

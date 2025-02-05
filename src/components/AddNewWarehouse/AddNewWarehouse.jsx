@@ -59,7 +59,7 @@ function AddNewWarehouse() {
         }
 
         try {
-            const response = await axios.post(`${API_URL}/warehouses`, newWarehouse);
+            const response = await axios.post(`${API_URL}warehouses`, newWarehouse);
             if (response) {
                 event.target.reset();
                 navigate("/warehouses");

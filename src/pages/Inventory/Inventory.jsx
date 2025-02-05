@@ -24,7 +24,7 @@ function Inventory() {
   };
   const fetchInventories = async () => {
     try {
-      const response = await axios.get(`${API_URL}/inventories`);
+      const response = await axios.get(`${API_URL}inventories`);
       setInventory(response.data);
     } catch (error) {
       console.error("Error fetching inventory:", error);
@@ -39,7 +39,7 @@ function Inventory() {
     const fetchResults = async () => {
       try {
         const response = await axios.get(
-          `${API_URL}/inventories/match/${keyword}`
+          `${API_URL}inventories/match/${keyword}`
         );
 
         setResults(response.data);

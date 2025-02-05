@@ -17,7 +17,7 @@ function EditInventoryItem() {
     const getItem = async () => {
       try {
         const itemResponse = await axios.get(
-          `${API_URL}/inventories/${id}`
+          `${API_URL}inventories/${id}`
         );
         const itemData = itemResponse.data;
         setData(itemData);
@@ -33,7 +33,7 @@ function EditInventoryItem() {
     const getWarehouse = async () => {
       try {
         const warehouseResponse = await axios.get(
-          `${API_URL}/warehouses`
+          `${API_URL}warehouses`
         );
         const warehouseList = warehouseResponse.data;
         const itemWarehouse = warehouseList.find(

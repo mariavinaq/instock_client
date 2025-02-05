@@ -26,7 +26,7 @@ function InventoryForm ({ data, button, warehouseId }) {
     useEffect(() => {
         const getWarehouses = async () => {
             try {
-                const response = await axios.get(`${API_URL}/warehouses`);
+                const response = await axios.get(`${API_URL}warehouses`);
                 setWarehouseList(response.data);
             } catch (error) {
                 console.error(`Error fetching data: ${error}`);
@@ -115,9 +115,9 @@ function InventoryForm ({ data, button, warehouseId }) {
                     "quantity": quantity
                 }
                 if (id) {
-                    axios.put(`${API_URL}/inventories/${data.id}`, requestBody)
+                    axios.put(`${API_URL}inventories/${data.id}`, requestBody)
                 } else {
-                    axios.post(`${API_URL}/inventories`, requestBody)
+                    axios.post(`${API_URL}inventories`, requestBody)
                 }
                 navigate(-1);
             } catch (error) {

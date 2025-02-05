@@ -17,7 +17,7 @@ export default function WarehouseModal({
       try {
         if (isOpen && warehouseId) {
           const response = await axios.get(
-            `${API_URL}/warehouses/${warehouseId}`
+            `${API_URL}warehouses/${warehouseId}`
           );
           setWarehouseName(response.data.warehouse_name);
         }
@@ -30,7 +30,7 @@ export default function WarehouseModal({
   }, [isOpen, warehouseId]);
   const deleteWarehouse = async () => {
     try {
-      await axios.delete(`${API_URL}/warehouses/${warehouseId}`);
+      await axios.delete(`${API_URL}warehouses/${warehouseId}`);
       fetchData();
       onClose();
     } catch (error) {

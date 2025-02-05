@@ -21,7 +21,7 @@ function AddNewInventory() {
   useEffect(() => {
     const getWarehouses = async () => {
       try {
-        const response = await axios.get(`${API_URL}/warehouses`);
+        const response = await axios.get(`${API_URL}warehouses`);
         setWarehouseList(response.data);
       } catch (error) {
         console.error("Error fetching warehouses:", error);
@@ -55,7 +55,7 @@ function AddNewInventory() {
     };
 
     try {
-      await axios.post(`${API_URL}/inventories`, newInventoryItem);
+      await axios.post(`${API_URL}inventories`, newInventoryItem);
       navigate(-1);
     } catch (error) {
       console.error("Unable to add inventory item:", error);
