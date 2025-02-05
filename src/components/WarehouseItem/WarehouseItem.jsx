@@ -1,9 +1,9 @@
 import React from "react";
 import "./WarehouseItem.scss";
 import { Link, useNavigate } from "react-router-dom";
-import editIcon from "../../assets/icons/edit-24px.svg";
-import deleteicon from "../../assets/icons/delete_outline-24px.svg";
-import ChevronRightIcon from "../../assets/icons/chevron_right-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
+import deleteicon from "../../assets/Icons/delete_outline-24px.svg";
+import ChevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 
 function WarehouseItem({ warehouse, handleOpenWarehouseModal }) {
   const navigate = useNavigate();
