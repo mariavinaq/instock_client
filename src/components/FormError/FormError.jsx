@@ -1,5 +1,5 @@
 import './FormError.scss';
-import ErrorIcon from '../../assets/icons/error-24px.svg';
+import ErrorIcon from '../../assets/Icons/error-24px.svg';
 
 function FormError ({ errorState, field, children }) {
     return (
