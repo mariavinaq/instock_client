@@ -3,6 +3,7 @@ import axios from "axios";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import WarehouseHeader from "../../components/WarehouseHeader/WarehouseHeader";
 import WarehouseModal from "../../components/WarehouseModal/WarehouseModal";
+import Loader from "../../components/Loader/Loader";
 import API_URL from "../../utils/utils";
 
 function Warehouse() {
@@ -11,6 +12,7 @@ function Warehouse() {
   const [selectedWarehouse, setSelectedWarehouse] = useState("");
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
 
   const handleOpenWarehouseModal = (event) => {
     const id = Number(event.target.id);
@@ -26,6 +28,7 @@ function Warehouse() {
     try {
       const response = await axios.get(`${API_URL}warehouses`);
       setWarehouseData(response.data);
+      setDataLoading(false);
     } catch (error) {
       console.error("Error fetching inventory:", error);
     }
@@ -66,12 +69,15 @@ function Warehouse() {
         fetchData={fetchWarehouses}
       />
       <WarehouseHeader keyword={keyword} setKeyword={setKeyword} />
-      <WarehouseList
-        warehouses={warehouseData}
-        results={results}
-        handleOpenWarehouseModal={handleOpenWarehouseModal}
-        keyword={keyword}
-      />
+      {dataLoading ? <Loader /> :
+        <WarehouseList
+          warehouses={warehouseData}
+          results={results}
+          handleOpenWarehouseModal={handleOpenWarehouseModal}
+          keyword={keyword}
+          dataLoading={dataLoading}
+        />
+      }
     </>
   );
 }
