@@ -175,10 +175,11 @@
 
     &__actions {
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
         gap: $pad-increment*2;
 
         @include tablet {
+            justify-content: end;
             width: 10%;
         }
 
